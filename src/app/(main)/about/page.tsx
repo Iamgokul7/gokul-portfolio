@@ -220,7 +220,7 @@ export default function AboutPage() {
                 </a>
                 
                 <a
-                  href="https://www.linkedin.com/in/gokulp0807/"
+                  href={siteConfig.linkedin}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full group relative inline-flex items-center justify-center overflow-hidden rounded-full font-mono text-xs font-medium border border-border bg-card text-foreground hover:bg-foreground hover:text-background px-6 py-2.5 transition-all duration-300 active:scale-95 cursor-pointer"
@@ -232,7 +232,7 @@ export default function AboutPage() {
                 </a>
                 
                 <a
-                  href="mailto:gokul.p0807@gmail.com"
+                  href={`mailto:${siteConfig.email}`}
                   className="w-full group relative inline-flex items-center justify-center overflow-hidden rounded-full font-mono text-xs font-medium border border-border bg-card text-foreground hover:bg-foreground hover:text-background px-6 py-2.5 transition-all duration-300 active:scale-95 cursor-pointer"
                 >
                   <span className="flex items-center gap-2">

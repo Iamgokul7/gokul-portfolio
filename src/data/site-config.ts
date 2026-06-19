@@ -8,9 +8,9 @@ export const siteConfig = {
     "AI & ERP Enthusiast"
   ],
   description: "Software Engineer building secure systems, AI-powered platforms, and modern web experiences.",
-  email: "gokulp@example.com",
+  email: "gokul.p0807@gmail.com",
   github: "https://github.com/Iamgokul7",
-  linkedin: "https://linkedin.com/in/gokul-p",
+  linkedin: "https://www.linkedin.com/in/gokulp0807/",
   location: "Chennai, Tamil Nadu, India",
   philosophy: "I believe in building software that is secure by design, intelligent by nature, and simple by implementation. Writing code is not just about solving a problem; it's about engineering systems that endure."
 }

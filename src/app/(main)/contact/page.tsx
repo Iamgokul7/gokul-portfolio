@@ -92,7 +92,7 @@ export default function ContactPage() {
                   className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm border-b border-border/40 pb-2.5"
                 >
                   <GithubIcon size={16} />
-                  <span>github.com/gokulp</span>
+                  <span>github.com/Iamgokul7</span>
                 </a>
                 <a
                   href={siteConfig.linkedin}
@@ -101,7 +101,7 @@ export default function ContactPage() {
                   className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm pb-1"
                 >
                   <LinkedinIcon size={16} />
-                  <span>linkedin.com/in/gokul-p</span>
+                  <span>linkedin.com/in/gokulp0807</span>
                 </a>
               </div>
             </div>
