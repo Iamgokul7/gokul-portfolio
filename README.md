@@ -3,7 +3,7 @@
 Personal portfolio website showcasing software engineering projects, technical skills, certifications, internships, and academic work.
 
 ## Live Portfolio
-Coming Soon
+https://gokulp-portfolio.vercel.app/
 
 ## Featured Projects
 
