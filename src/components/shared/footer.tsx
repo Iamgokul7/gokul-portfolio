@@ -22,7 +22,7 @@ export function Footer() {
               href={siteConfig.github}
               target="_blank"
               rel="noreferrer"
-              className="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors duration-300"
             >
               GitHub
             </a>
@@ -30,24 +30,24 @@ export function Footer() {
               href={siteConfig.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors duration-300"
             >
               LinkedIn
             </a>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors duration-300"
             >
               Email
             </a>
             <ResumeButton
               variant="link"
-              className="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors p-0 h-auto"
+              className="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors duration-300 p-0 h-auto"
             />
           </div>
         </div>
 
-        <div className="mt-16 border-t border-border/30 pt-6 flex justify-between items-center text-[10px] font-mono uppercase tracking-widest text-muted-foreground/45">
+        <div className="mt-16 border-t border-border/30 pt-6 flex justify-between items-center text-[10px] font-mono uppercase tracking-widest text-muted-label font-semibold">
           <span>&copy; {new Date().getFullYear()} Gokul P</span>
         </div>
       </div>

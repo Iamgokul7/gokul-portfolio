@@ -66,16 +66,16 @@ export default function ProjectsPage() {
             <FadeIn
               key={project.id}
               direction="up"
-              className="group border border-border/40 bg-card/25 dark:bg-card/10 hover:border-foreground/20 rounded-3xl p-8 sm:p-12 transition-all duration-300"
+              className="group border border-border/80 bg-card rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:border-accent/40 hover:-translate-y-1.5 transition-all duration-300"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 {/* Meta details */}
-                <div className="lg:col-span-3 font-mono text-xs text-muted-foreground/60 space-y-2 uppercase">
-                  <div className="font-bold text-foreground/80">{project.typeLabel}</div>
+                <div className="lg:col-span-3 font-mono text-xs text-muted-label space-y-2 uppercase font-semibold">
+                  <div className="font-bold text-accent">{project.typeLabel}</div>
                   <div className="whitespace-pre-line leading-relaxed">{project.timeline}</div>
                   {project.badge && (
                     <div className="inline-block pt-2">
-                      <span className="rounded-full bg-foreground/10 dark:bg-foreground/15 border border-foreground/20 text-foreground text-[9px] font-bold tracking-wider px-2.5 py-1">
+                      <span className="rounded-full bg-white border border-border text-accent text-[9px] font-bold tracking-wider px-2.5 py-1 shadow-sm">
                         {project.badge}
                       </span>
                     </div>
@@ -84,7 +84,7 @@ export default function ProjectsPage() {
 
                 {/* Specs */}
                 <div className="lg:col-span-6 space-y-6">
-                  <h2 className="text-3xl font-bold uppercase tracking-tight text-foreground group-hover:text-muted-foreground/80 transition-colors duration-200">
+                  <h2 className="text-3xl font-bold uppercase tracking-tight text-foreground transition-colors duration-200">
                     {project.title}
                   </h2>
                   <p className="text-muted-foreground text-base font-light leading-relaxed">
@@ -94,7 +94,7 @@ export default function ProjectsPage() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-border px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-muted-foreground"
+                        className="rounded-full border border-border bg-white px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider text-muted-foreground hover:border-accent hover:text-accent transition-colors duration-200 cursor-default shadow-sm"
                       >
                         {tag}
                       </span>
@@ -107,7 +107,7 @@ export default function ProjectsPage() {
                   <MagneticButton>
                     <Link
                       href={project.link}
-                      className="group flex items-center gap-2 rounded-full border border-foreground bg-foreground text-background px-5 py-2.5 text-xs font-semibold hover:bg-background hover:text-foreground transition-colors duration-300"
+                      className="group flex items-center gap-2 rounded-full bg-accent text-white px-5 py-2.5 text-xs font-semibold shadow-[0_4px_14px_rgba(201,106,61,0.15)] hover:bg-[#b85e34] hover:shadow-[0_8px_20px_rgba(201,106,61,0.25)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
                     >
                       View Case Study
                       <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform duration-300" />
@@ -120,7 +120,7 @@ export default function ProjectsPage() {
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="group flex items-center gap-2 rounded-full border border-border bg-card text-foreground hover:bg-foreground hover:text-background px-5 py-2.5 text-xs font-semibold transition-colors duration-300"
+                        className="group flex items-center gap-2 rounded-full border border-foreground bg-white text-foreground hover:border-accent hover:text-accent px-5 py-2.5 text-xs font-semibold hover:-translate-y-0.5 active:scale-95 transition-all duration-300 shadow-sm"
                       >
                         <GithubIcon size={13} />
                         View Repository

@@ -36,7 +36,7 @@ export function SkillsMarquee() {
             {marqueeSkills.map((skill, index) => (
               <span
                 key={index}
-                className="text-4xl sm:text-6xl font-bold uppercase tracking-tighter text-muted-foreground/35 hover:text-foreground transition-colors duration-300 select-none"
+                className="text-4xl sm:text-6xl font-bold uppercase tracking-tighter text-decorative hover:text-foreground transition-colors duration-300 select-none"
               >
                 {skill.toUpperCase()}
               </span>

@@ -13,7 +13,7 @@ export function TimelineSection() {
         {/* Left Column: Experience Timeline */}
         <div className="lg:col-span-7">
           <FadeIn direction="up">
-            <span className="text-4xl sm:text-6xl font-bold font-mono tracking-tighter text-foreground/40 block select-none">
+            <span className="text-4xl sm:text-6xl font-bold font-mono tracking-tighter text-decorative block select-none">
               03
             </span>
             <span className="text-xs uppercase tracking-widest font-mono font-bold text-foreground mt-2 block mb-16">
@@ -21,28 +21,28 @@ export function TimelineSection() {
             </span>
           </FadeIn>
 
-          <div className="relative pl-6 border-l border-border/40 space-y-20">
+          <div className="relative pl-6 border-l border-border/80 space-y-20">
             {experienceTimeline.map((event, idx) => (
               <div key={event.id} className="relative group">
                 {/* Timeline node */}
-                <div className="absolute -left-[31px] top-1.5 h-4 w-4 rounded-full border border-border bg-background group-hover:bg-foreground transition-colors duration-300" />
+                <div className="absolute -left-[31px] top-1.5 h-4 w-4 rounded-full border border-accent bg-accent shadow-[0_0_10px_rgba(201,106,61,0.2)]" />
                 
                 <FadeIn direction="up" delay={idx * 0.08}>
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
                     <div>
                       <h3 className="text-2xl font-bold uppercase tracking-tight text-foreground">{event.role}</h3>
-                      <span className="text-sm font-mono text-muted-foreground mt-1.5 block">{event.company}</span>
+                      <span className="text-sm font-mono text-accent mt-1.5 block font-semibold">{event.company}</span>
                     </div>
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground font-mono mt-1">
-                      <span className="flex items-center gap-1.5"><Calendar size={12} /> {event.period}</span>
-                      <span className="flex items-center gap-1.5"><MapPin size={12} /> {event.location}</span>
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-label font-mono mt-1">
+                      <span className="flex items-center gap-1.5"><Calendar size={12} className="text-accent" /> {event.period}</span>
+                      <span className="flex items-center gap-1.5"><MapPin size={12} className="text-accent" /> {event.location}</span>
                     </div>
                   </div>
 
                   <ul className="space-y-3.5 text-sm font-light text-muted-foreground leading-relaxed">
                     {event.description.map((desc, dIdx) => (
                       <li key={dIdx} className="flex items-start gap-3">
-                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/60" />
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
                         <span>{desc}</span>
                       </li>
                     ))}
@@ -56,7 +56,7 @@ export function TimelineSection() {
         {/* Right Column: Certifications */}
         <div className="lg:col-span-5">
           <FadeIn direction="up">
-            <span className="text-4xl sm:text-6xl font-bold font-mono tracking-tighter text-foreground/40 block select-none">
+            <span className="text-4xl sm:text-6xl font-bold font-mono tracking-tighter text-decorative block select-none">
               04
             </span>
             <span className="text-xs uppercase tracking-widest font-mono font-bold text-foreground mt-2 block mb-16">
@@ -66,10 +66,10 @@ export function TimelineSection() {
 
           <StaggerContainer className="space-y-6">
             {certifications.map((cert, idx) => (
-              <FadeIn key={cert.name} direction="up" className="group rounded-2xl border border-border/40 bg-card/20 dark:bg-card/10 hover:bg-card hover:border-foreground/20 p-6 sm:p-8 transition-all duration-300 flex flex-col justify-between">
+              <FadeIn key={cert.name} direction="up" className="group rounded-2xl border border-border/80 bg-card shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:border-accent/40 hover:-translate-y-1.5 p-6 sm:p-8 transition-all duration-300 flex flex-col justify-between">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 border border-border/40 rounded-xl bg-background group-hover:bg-foreground group-hover:text-background transition-colors duration-300">
+                    <div className="p-3 border border-border/60 rounded-xl bg-[#F5F2EC]/50 text-accent transition-colors duration-300">
                       <Award size={18} />
                     </div>
                     <div>

@@ -36,7 +36,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
         {/* 1. Hero Section */}
         <div className="border-b border-border/40 pb-12 mb-16">
           <FadeIn direction="up">
-            <span className="text-xs font-mono text-muted-foreground/60 uppercase tracking-widest block mb-4">
+            <span className="text-xs font-mono text-muted-label uppercase tracking-widest block mb-4 font-semibold">
               {project.typeLabel}
             </span>
             <h1 className="text-3xl sm:text-6xl font-bold tracking-tighter uppercase text-foreground leading-none break-words">
@@ -46,7 +46,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-border px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-muted-foreground"
+                  className="rounded-full border border-border bg-white px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider text-muted-foreground hover:border-accent hover:text-accent transition-colors duration-200 cursor-default shadow-sm"
                 >
                   {tag}
                 </span>
@@ -142,7 +142,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-lg border border-border/80 bg-card/35 px-4 py-2 text-xs font-mono uppercase tracking-wider text-foreground hover:border-foreground/35 transition-colors duration-200"
+                      className="rounded-full border border-border bg-white px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-muted-foreground hover:border-accent hover:text-accent transition-colors duration-200 cursor-default shadow-sm"
                     >
                       {tag}
                     </span>
@@ -187,8 +187,8 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
             {/* 10. Lessons Learned */}
             <FadeIn direction="up">
               <h2 className="text-lg font-mono uppercase tracking-widest text-foreground/80 border-b border-border/30 pb-2 mb-4">Lessons Learned</h2>
-              <div className="rounded-2xl border border-border/40 bg-muted/20 dark:bg-muted/10 p-6 sm:p-8 font-light text-muted-foreground leading-relaxed">
-                <p className="text-xs font-mono uppercase tracking-widest text-foreground font-semibold mb-4">Retrospective</p>
+              <div className="rounded-2xl border border-border/80 bg-[#F5F2EC]/40 p-6 sm:p-8 font-light text-muted-foreground leading-relaxed">
+                <p className="text-xs font-mono uppercase tracking-widest text-accent font-bold mb-4">Retrospective</p>
                 <p className="text-sm sm:text-base text-muted-foreground italic leading-relaxed">
                   &quot;{project.lessonsLearned}&quot;
                 </p>
@@ -198,8 +198,8 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
 
           {/* Project Sidebar metadata (Right) */}
           <div className="lg:col-span-4 space-y-8">
-            <FadeIn direction="up" delay={0.2} className="border border-border/40 bg-card/25 dark:bg-card/10 rounded-2xl p-6 sm:p-8 sticky top-28">
-              <h3 className="text-xs uppercase tracking-widest text-foreground font-mono font-bold mb-6">
+            <FadeIn direction="up" delay={0.2} className="border border-border/80 bg-card rounded-2xl p-6 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.03)] sticky top-28">
+              <h3 className="text-xs uppercase tracking-widest text-foreground font-mono font-bold mb-6 border-b border-border/40 pb-2">
                 Project Details
               </h3>
               <ul className="space-y-4 text-xs font-mono text-muted-foreground leading-relaxed">
@@ -219,7 +219,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center justify-center gap-2 rounded-full border border-foreground bg-foreground text-background px-6 py-3 text-xs font-semibold hover:bg-background hover:text-foreground transition-colors duration-300 w-full"
+                      className="flex items-center justify-center gap-2 rounded-full bg-accent text-white px-6 py-3 text-xs font-semibold shadow-[0_4px_14px_rgba(201,106,61,0.15)] hover:bg-[#b85e34] hover:shadow-[0_8px_20px_rgba(201,106,61,0.25)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 w-full"
                     >
                       <GithubIcon size={14} />
                       View Repository

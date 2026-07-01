@@ -41,10 +41,10 @@ export default function ContactPage() {
           <FadeIn
             direction="up"
             delay={0.2}
-            className="group border border-border/40 bg-card/20 dark:bg-card/10 p-8 rounded-3xl flex flex-col justify-between min-h-[220px]"
+            className="group border border-border/80 bg-card p-8 rounded-3xl flex flex-col justify-between min-h-[220px] shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:border-accent/40 hover:-translate-y-1.5 transition-all duration-300"
           >
             <div>
-              <span className="text-xs uppercase tracking-widest text-muted-foreground font-mono font-medium block mb-6">
+              <span className="text-xs uppercase tracking-widest text-accent font-mono font-bold block mb-6">
                 PRIMARY EMAIL
               </span>
               <h2 className="text-2xl font-mono text-foreground font-semibold break-all">
@@ -56,7 +56,7 @@ export default function ContactPage() {
               <MagneticButton>
                 <button
                   onClick={copyEmail}
-                  className="flex items-center gap-2 rounded-full border border-foreground bg-foreground text-background px-6 py-3 text-xs font-semibold hover:bg-background hover:text-foreground transition-colors duration-300 shadow-xl"
+                  className="flex items-center gap-2 rounded-full bg-accent text-white px-6 py-3 text-xs font-semibold shadow-[0_4px_14px_rgba(201,106,61,0.15)] hover:bg-[#b85e34] hover:shadow-[0_8px_20px_rgba(201,106,61,0.25)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
                 >
                   {copied ? (
                     <>
@@ -78,10 +78,10 @@ export default function ContactPage() {
           <FadeIn
             direction="up"
             delay={0.3}
-            className="border border-border/40 bg-card/20 dark:bg-card/10 p-8 rounded-3xl flex flex-col justify-between min-h-[220px]"
+            className="group border border-border/80 bg-card p-8 rounded-3xl flex flex-col justify-between min-h-[220px] shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:border-accent/40 hover:-translate-y-1.5 transition-all duration-300"
           >
             <div>
-              <span className="text-xs uppercase tracking-widest text-muted-foreground font-mono font-medium block mb-6">
+              <span className="text-xs uppercase tracking-widest text-accent font-mono font-bold block mb-6">
                 PROFESSIONAL PORTALS
               </span>
               <div className="space-y-4">
@@ -89,7 +89,7 @@ export default function ContactPage() {
                   href={siteConfig.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm border-b border-border/40 pb-2.5"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors font-mono text-sm border-b border-border/40 pb-2.5"
                 >
                   <GithubIcon size={16} />
                   <span>github.com/Iamgokul7</span>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                   href={siteConfig.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm pb-1"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors font-mono text-sm pb-1"
                 >
                   <LinkedinIcon size={16} />
                   <span>linkedin.com/in/gokulp0807</span>
@@ -106,7 +106,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="text-[10px] font-mono text-muted-foreground/45 mt-8 select-none">
+            <div className="text-[10px] font-mono text-muted-label mt-8 select-none font-semibold">
               SECURE ENVELOPE ENCRYPTION ACTIVE
             </div>
           </FadeIn>

@@ -14,13 +14,13 @@ export default function AboutPage() {
         {/* Page Header */}
         <div className="border-b border-border/40 pb-12 mb-16">
           <FadeIn direction="up">
-            <span className="text-xs uppercase tracking-widest text-muted-foreground font-mono font-medium block">
+            <span className="text-xs uppercase tracking-widest text-muted-label font-mono font-semibold block">
               BIOGRAPHY
             </span>
             <h1 className="mt-4 text-5xl sm:text-7xl font-bold tracking-tighter uppercase text-foreground">
               Gokul P
             </h1>
-            <p className="mt-4 text-muted-foreground uppercase tracking-widest text-xs font-mono">
+            <p className="mt-4 text-muted-label uppercase tracking-widest text-xs font-mono font-semibold">
               COMPUTER SCIENCE GRADUATE (2025)
             </p>
           </FadeIn>
@@ -113,13 +113,13 @@ export default function AboutPage() {
                           </p>
                         )}
                       </div>
-                      <span className="text-[10px] text-muted-foreground/50 font-mono mt-4 block">
+                      <span className="text-[10px] text-muted-label font-mono mt-4 block font-semibold">
                         {cert.date}
                       </span>
                     </>
                   )
 
-                  const cardClass = "group block border border-border/40 bg-card/25 dark:bg-card/10 p-5 rounded-xl flex flex-col justify-between hover:border-foreground/30 hover:bg-card/45 dark:hover:bg-card/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md text-left"
+                  const cardClass = "group block border border-border/80 bg-card p-5 rounded-xl flex flex-col justify-between hover:border-accent/40 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-left"
 
                   if (cert.pdf) {
                     return (
@@ -152,26 +152,26 @@ export default function AboutPage() {
           <div className="lg:col-span-4 space-y-12">
             {/* Education Block */}
             <FadeIn direction="up" delay={0.35}>
-              <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-mono font-medium border-b border-border/40 pb-2 mb-4">
+              <h3 className="text-xs uppercase tracking-widest text-muted-label font-mono font-bold border-b border-border/40 pb-2 mb-4">
                 Education
               </h3>
               <div className="font-mono text-xs text-foreground space-y-6">
                 <div className="space-y-1">
                   <div className="font-bold uppercase tracking-tight text-foreground">B.E. COMPUTER SCIENCE & ENGINEERING</div>
-                  <div className="text-muted-foreground">Anand Institute of Higher Technology</div>
-                  <div className="text-muted-foreground/60 font-semibold mt-1">2021 – 2025</div>
+                  <div className="text-secondary-foreground">Anand Institute of Higher Technology</div>
+                  <div className="text-muted-label font-semibold mt-1">2021 – 2025</div>
                   <div className="text-foreground/90 font-semibold">CGPA: 7.84 / 10</div>
                 </div>
                 <div className="space-y-1 border-t border-border/20 pt-4">
                   <div className="font-bold uppercase tracking-tight text-foreground">HIGHER SECONDARY (XII)</div>
-                  <div className="text-muted-foreground">A.V.Rm.V Matric Higher Secondary School</div>
-                  <div className="text-muted-foreground/60 font-semibold mt-1">2020 – 2021</div>
+                  <div className="text-secondary-foreground">A.V.Rm.V Matric Higher Secondary School</div>
+                  <div className="text-muted-label font-semibold mt-1">2020 – 2021</div>
                   <div className="text-foreground/90 font-semibold">Score: 81.93%</div>
                 </div>
                 <div className="space-y-1 border-t border-border/20 pt-4">
                   <div className="font-bold uppercase tracking-tight text-foreground">SECONDARY SCHOOL (X)</div>
-                  <div className="text-muted-foreground">A.V.Rm.V Matric Higher Secondary School</div>
-                  <div className="text-muted-foreground/60 font-semibold mt-1">2018 – 2019</div>
+                  <div className="text-secondary-foreground">A.V.Rm.V Matric Higher Secondary School</div>
+                  <div className="text-muted-label font-semibold mt-1">2018 – 2019</div>
                   <div className="text-foreground/90 font-semibold">Score: 71.6%</div>
                 </div>
               </div>
@@ -191,7 +191,7 @@ export default function AboutPage() {
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-lg border border-border bg-card/25 dark:bg-card/10 px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-foreground hover:border-foreground/20 transition-all duration-200"
+                    className="rounded-full border border-border bg-white px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider text-muted-foreground hover:border-accent hover:text-accent transition-colors duration-200 cursor-default shadow-sm"
                   >
                     {skill}
                   </span>
@@ -201,7 +201,7 @@ export default function AboutPage() {
 
             {/* Portals & Resume */}
             <FadeIn direction="up" delay={0.45}>
-              <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-mono font-medium border-b border-border/40 pb-2 mb-4">
+              <h3 className="text-xs uppercase tracking-widest text-muted-label font-mono font-bold border-b border-border/40 pb-2 mb-4">
                 Credentials & Portals
               </h3>
               <div className="space-y-3">
@@ -211,7 +211,7 @@ export default function AboutPage() {
                   href={siteConfig.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full group relative inline-flex items-center justify-center overflow-hidden rounded-full font-mono text-xs font-medium border border-border bg-card text-foreground hover:bg-foreground hover:text-background px-6 py-2.5 transition-all duration-300 active:scale-95 cursor-pointer"
+                  className="w-full group inline-flex items-center justify-center rounded-full font-mono text-xs font-semibold border border-foreground bg-white text-foreground hover:border-accent hover:text-accent px-6 py-2.5 transition-all duration-300 active:scale-95 hover:-translate-y-0.5 cursor-pointer shadow-sm"
                 >
                   <span className="flex items-center gap-2">
                     <GithubIcon size={12} />
@@ -223,7 +223,7 @@ export default function AboutPage() {
                   href={siteConfig.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full group relative inline-flex items-center justify-center overflow-hidden rounded-full font-mono text-xs font-medium border border-border bg-card text-foreground hover:bg-foreground hover:text-background px-6 py-2.5 transition-all duration-300 active:scale-95 cursor-pointer"
+                  className="w-full group inline-flex items-center justify-center rounded-full font-mono text-xs font-semibold border border-foreground bg-white text-foreground hover:border-accent hover:text-accent px-6 py-2.5 transition-all duration-300 active:scale-95 hover:-translate-y-0.5 cursor-pointer shadow-sm"
                 >
                   <span className="flex items-center gap-2">
                     <LinkedinIcon size={12} />
@@ -233,7 +233,7 @@ export default function AboutPage() {
                 
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="w-full group relative inline-flex items-center justify-center overflow-hidden rounded-full font-mono text-xs font-medium border border-border bg-card text-foreground hover:bg-foreground hover:text-background px-6 py-2.5 transition-all duration-300 active:scale-95 cursor-pointer"
+                  className="w-full group inline-flex items-center justify-center rounded-full font-mono text-xs font-semibold border border-foreground bg-white text-foreground hover:border-accent hover:text-accent px-6 py-2.5 transition-all duration-300 active:scale-95 hover:-translate-y-0.5 cursor-pointer shadow-sm"
                 >
                   <span className="flex items-center gap-2">
                     <Mail size={12} />
