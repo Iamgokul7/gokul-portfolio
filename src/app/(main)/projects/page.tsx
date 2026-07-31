@@ -33,6 +33,28 @@ export default function ProjectsPage() {
       tags: ["Python", "Flask", "LangChain", "AI Agents", "SQLite", "Enterprise Workflows"],
       github: "https://github.com/Iamgokul7/ERPilot-AI",
       link: "/projects/erpilot"
+    },
+    {
+      id: "graphical-password",
+      typeLabel: "FINAL YEAR PROJECT",
+      badge: "FLAGSHIP PROJECT",
+      timeline: "TIMELINE:\nJAN 2025 – MAY 2025",
+      title: "Graphical Password Authentication With Data Hiding",
+      description: "A multi-layer authentication platform developed as my final year project. The system combines credential validation, image-based verification, graphical password authentication, AES-secured file storage, and DWT steganography to deliver enhanced access control and secure data protection.",
+      tags: ["Python", "Flask", "OpenCV", "AES Encryption", "DWT Steganography", "MySQL"],
+      github: "https://github.com/Iamgokul7/Graphical-Password-Authentication-With-Data-Hiding",
+      link: "/projects/graphical-password"
+    },
+    {
+      id: "real-estate",
+      typeLabel: "ACADEMIC PROJECT",
+      badge: "MINI PROJECT",
+      timeline: "TIMELINE:\nAPR 2024 – MAY 2024",
+      title: "Real Estate Management System",
+      description: "A full-stack real estate management platform developed as a mini team project. The application enables property listing, booking management, client interaction, administrative control, and database-driven property operations through an integrated web-based system.",
+      tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "XAMPP"],
+      github: "https://github.com/Iamgokul7/Real-Estate-Management-System",
+      link: "/projects/real-estate"
     }
   ]
 
