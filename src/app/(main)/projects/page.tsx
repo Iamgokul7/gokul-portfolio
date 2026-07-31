@@ -11,6 +11,19 @@ import { GithubIcon } from "@/components/ui/icons"
 export default function ProjectsPage() {
   const featuredProjects = [
     {
+      id: "resumetailor-ai",
+      typeLabel: "INDEPENDENT PROJECT",
+      badge: "PERSONAL INITIATIVE",
+      timeline: "TIMELINE:\nJUN 2026 – JUL 2026",
+      title: "ResumeTailor AI",
+      description: "ResumeTailor AI is an AI-powered resume customization platform that transforms a master resume into an ATS-optimized, recruiter-ready version tailored to any job description. The application combines semantic job analysis, intelligent keyword prioritization, AI-assisted content refinement, and secure PDF generation while enforcing strict factual accuracy through validation mechanisms that prevent unsupported information from being introduced. The result is a professional, ATS-safe resume that preserves the candidate's original experience while improving relevance for the target role.",
+      tags: ["Python", "FastAPI", "Google Gemini", "Jinja2", "WeasyPrint", "HTML", "CSS", "JavaScript", "Docker", "Render", "ATS Optimization"],
+      github: "https://github.com/Iamgokul7/ResumeTailor-AI",
+      link: "/projects/resumetailor-ai",
+      liveDemo: "https://resume-tailor-j5zl.onrender.com/login",
+      demoBadge: "Password Protected (to prevent API abuse)"
+    },
+    {
       id: "erpilot",
       typeLabel: "INDEPENDENT PROJECT",
       badge: "PERSONAL INITIATIVE",
@@ -20,28 +33,6 @@ export default function ProjectsPage() {
       tags: ["Python", "Flask", "LangChain", "AI Agents", "SQLite", "Enterprise Workflows"],
       github: "https://github.com/Iamgokul7/ERPilot-AI",
       link: "/projects/erpilot"
-    },
-    {
-      id: "graphical-password",
-      typeLabel: "FINAL YEAR PROJECT",
-      badge: "FLAGSHIP PROJECT",
-      timeline: "TIMELINE:\nJAN 2025 – MAY 2025",
-      title: "Graphical Password Authentication With Data Hiding",
-      description: "A multi-layer authentication platform developed as my final year project. The system combines credential validation, image-based verification, graphical password authentication, AES-secured file storage, and DWT steganography to deliver enhanced access control and secure data protection.",
-      tags: ["Python", "Flask", "OpenCV", "AES Encryption", "DWT Steganography", "MySQL"],
-      github: "https://github.com/Iamgokul7/Graphical-Password-Authentication-With-Data-Hiding",
-      link: "/projects/graphical-password"
-    },
-    {
-      id: "real-estate",
-      typeLabel: "ACADEMIC PROJECT",
-      badge: "MINI PROJECT",
-      timeline: "TIMELINE:\nAPR 2024 – MAY 2024",
-      title: "Real Estate Management System",
-      description: "A full-stack real estate management platform developed as a mini team project. The application enables property listing, booking management, client interaction, administrative control, and database-driven property operations through an integrated web-based system.",
-      tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "XAMPP"],
-      github: "https://github.com/Iamgokul7/Real-Estate-Management-System",
-      link: "/projects/real-estate"
     }
   ]
 

@@ -22,6 +22,8 @@ export interface Project {
   tags: string[]
   github?: string
   link?: string
+  liveDemo?: string
+  demoBadge?: string
   year: string
   typeLabel: string
   problem: string
@@ -37,6 +39,105 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "resumetailor-ai",
+    title: "ResumeTailor AI",
+    description: "ResumeTailor AI is an AI-powered resume customization platform that transforms a master resume into an ATS-optimized, recruiter-ready version tailored to any job description. The application combines semantic job analysis, intelligent keyword prioritization, AI-assisted content refinement, and secure PDF generation while enforcing strict factual accuracy through validation mechanisms that prevent unsupported information from being introduced. The result is a professional, ATS-safe resume that preserves the candidate's original experience while improving relevance for the target role.",
+    details: [
+      "Semantic keyword analysis",
+      "AI-powered resume rewriting",
+      "ATS optimization",
+      "Interactive keyword selection",
+      "Professional PDF rendering",
+      "Resume scoring dashboard",
+      "Resume completeness validation",
+      "Hallucination prevention",
+      "Secure authentication",
+      "Production deployment"
+    ],
+    tags: ["Python", "FastAPI", "Google Gemini", "Jinja2", "WeasyPrint", "HTML", "CSS", "JavaScript", "Docker", "Render", "ATS Optimization"],
+    year: "2026",
+    typeLabel: "INDEPENDENT PROJECT // 2026",
+    github: "https://github.com/Iamgokul7/ResumeTailor-AI",
+    link: "/projects/resumetailor-ai",
+    liveDemo: "https://resume-tailor-j5zl.onrender.com/login",
+    demoBadge: "Password Protected (to prevent API abuse)",
+    problem: "Most AI resume tools rewrite resumes by introducing unsupported skills, generic recruiter buzzwords, or fabricated experience. This reduces trustworthiness and may negatively impact hiring outcomes. The goal of ResumeTailor AI was to build a resume tailoring engine that improves ATS compatibility while ensuring every generated statement remains traceable to the user's original resume.",
+    solution: "Developed a complete AI-powered resume customization workflow where users upload a master resume and a target job description. The application performs semantic analysis, extracts relevant keywords, allows users to prioritize keyword integration, generates recruiter-quality resume content using Google Gemini, validates outputs against the original resume to prevent hallucinations, and exports a professional ATS-friendly PDF.",
+    architectureDescription: "ResumeTailor AI follows a modular FastAPI architecture designed for performance and reliability.",
+    techStackGroups: [
+      {
+        category: "Frontend",
+        technologies: ["HTML", "CSS", "JavaScript"]
+      },
+      {
+        category: "Backend",
+        technologies: ["Python", "FastAPI"]
+      },
+      {
+        category: "Artificial Intelligence",
+        technologies: ["Google Gemini API", "Semantic Job Description Matching"]
+      },
+      {
+        category: "PDF",
+        technologies: ["Jinja2", "WeasyPrint"]
+      },
+      {
+        category: "Infrastructure",
+        technologies: ["Docker", "Render"]
+      },
+      {
+        category: "Authentication",
+        technologies: ["Starlette Session Middleware", "Rate Limiting"]
+      }
+    ],
+    features: [
+      "AI Resume Tailoring",
+      "ATS Optimization",
+      "Semantic Job Description Analysis",
+      "Keyword Selection Interface",
+      "Resume Match Scoring",
+      "Recruiter Readability Analysis",
+      "Capability Match Analysis",
+      "Resume Completeness Validation",
+      "PDF Resume Generation",
+      "Password Protected Access",
+      "Session Authentication",
+      "Rate Limiting",
+      "Hallucination Prevention",
+      "Responsive Interface"
+    ],
+    modules: [
+      "Upload Resume",
+      "Paste Job Description",
+      "Analyze Keywords",
+      "Select Priority Keywords",
+      "Generate Tailored Resume",
+      "Validate Resume",
+      "Generate ATS PDF",
+      "Download Final Resume"
+    ],
+    screenshots: [
+      { src: "/images/projects/resumetailor-ai/LOGIN.png", alt: "ResumeTailor AI Login Interface", label: "01. Authentication Portal" },
+      { src: "/images/projects/resumetailor-ai/UPLOADING THE RESUME AND THE JOB DESCRIPTION PAGE.png", alt: "Upload Resume and JD", label: "02. Input Analysis Interface" },
+      { src: "/images/projects/resumetailor-ai/SELECTED KEYWORD PAGE.png", alt: "Keyword Selection", label: "03. Interactive Keyword Prioritization" },
+      { src: "/images/projects/resumetailor-ai/TAILORED RESUME DOWNLOAD PAGE 1.png", alt: "Download Resume", label: "04. ATS-Optimized PDF Export" },
+      { src: "/images/projects/resumetailor-ai/TAILORED RESUME DOWNLOAD PAGE 1  AND PREVIEW.png", alt: "Preview 1", label: "05. Resume Match Dashboard" },
+      { src: "/images/projects/resumetailor-ai/TAILORED RESUME DOWNLOAD PAGE 2 AND PREVIEW.png", alt: "Preview 2", label: "06. Capability Match Analysis" },
+      { src: "/images/projects/resumetailor-ai/TAILORED RESUME DOWNLOAD PAGE 3 AND PREVIEW.png", alt: "Preview 3", label: "07. Recruiter Readability Scoring" },
+      { src: "/images/projects/resumetailor-ai/TAILORED RESUME DOWNLOAD PAGE 4 AND PREVIEW.png", alt: "Preview 4", label: "08. Resume Completeness Validation" },
+      { src: "/images/projects/resumetailor-ai/TAILORED RESUME DOWNLOAD PAGE 5 AND PREVIEW.png", alt: "Preview 5", label: "09. Final Preview and Export" }
+    ],
+    lessonsLearned: "Building ResumeTailor AI highlighted the complexities of balancing generative AI capabilities with strict factual accuracy. Implementing hallucination prevention mechanisms required careful prompt engineering and post-generation validation. The integration of WeasyPrint and Jinja2 proved highly effective for programmatically generating pixel-perfect PDFs. Overall, the project reinforced best practices in building secure, user-centric AI applications optimized for real-world hiring constraints.",
+    sidebarFields: [
+      { label: "TIMELINE", value: "JUN 2026 – JUL 2026" },
+      { label: "PROJECT TYPE", value: "Independent Project" },
+      { label: "ROLE", value: "Full Stack Developer" },
+      { label: "STATUS", value: "Completed" },
+      { label: "DEPLOYMENT", value: "Render" },
+      { label: "REPOSITORY", value: "GitHub" }
+    ]
+  },
   {
     id: "erpilot",
     title: "ERPilot AI",

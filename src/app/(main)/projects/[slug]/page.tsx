@@ -226,6 +226,25 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                     </a>
                   </MagneticButton>
                 )}
+                {project.liveDemo && (
+                  <div className="flex flex-col items-center gap-2 mt-2">
+                    <MagneticButton>
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center justify-center gap-2 rounded-full border border-accent bg-transparent text-accent px-6 py-3 text-xs font-semibold hover:bg-accent/10 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 w-full"
+                      >
+                        Live Demo
+                      </a>
+                    </MagneticButton>
+                    {project.demoBadge && (
+                      <span className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground bg-secondary/50 px-2.5 py-1 rounded-full border border-border/50 text-center">
+                        {project.demoBadge}
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
             </FadeIn>
           </div>
