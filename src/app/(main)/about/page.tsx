@@ -7,35 +7,74 @@ import { siteConfig } from "@/data/site-config"
 import { GithubIcon, LinkedinIcon } from "@/components/ui/icons"
 import { Mail } from "lucide-react"
 
+const headingClass = "mb-6 border-b border-border pb-4 text-2xl font-semibold tracking-tight text-foreground"
+
+const certificates = [
+  {
+    title: "Oracle Cloud Infrastructure 2023 Certified Foundations Associate",
+    issuer: "Oracle University",
+    date: "April 2024",
+    pdf: "/certificates/Gokul eCertificate.pdf"
+  },
+  {
+    title: "Networking Essentials",
+    issuer: "Cisco Networking Academy",
+    date: "May 2023",
+    pdf: ""
+  },
+  {
+    title: "Journey to Cloud Computing",
+    issuer: "IBM SkillsBuild",
+    date: "September 2024",
+    pdf: "/certificates/JourneytoCloudEnvisioningYourSolution_Badge20240914-7-4uzv0r.pdf"
+  },
+  {
+    title: "Figma UI/UX Design Masterclass",
+    issuer: "Figma UI/UX",
+    date: "November 2024",
+    pdf: "/certificates/Gokul_UI_UX_Designing_Certificate.pdf"
+  },
+  {
+    title: "MongoDB Node.js Developer Path for SmartBridge",
+    issuer: "MongoDB",
+    date: "September 2024",
+    pdf: "/certificates/gokul-p-0ced2c89-ce8d-4e35-972a-5c22632e1ecb-certificate.pdf"
+  }
+]
+
+const technicalSkills = [
+  "Python", "C", "JavaScript", "HTML", "CSS", "Flask", "PHP",
+  "MySQL", "Git", "OpenCV", "Figma", "Oracle Cloud Infrastructure",
+  "SAP / ERP Fundamentals", "REST API Integration", "Authentication Systems",
+  "Full Stack Development", "AES Encryption", "Steganography", "Database Integration"
+]
+
+const outlineLink =
+  "flex w-full items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:border-accent hover:text-accent active:scale-[0.98]"
+
 export default function AboutPage() {
   return (
     <PageTransition>
-      <div className="relative px-6 md:px-12 py-24 sm:py-32 max-w-screen-xl mx-auto min-h-[80vh] flex flex-col justify-center">
+      <div className="relative mx-auto flex min-h-[80vh] max-w-screen-xl flex-col justify-center px-6 py-24 md:px-12">
         {/* Page Header */}
-        <div className="border-b border-border/40 pb-12 mb-16">
-          <FadeIn direction="up">
-            <span className="text-xs uppercase tracking-widest text-muted-label font-mono font-semibold block">
-              BIOGRAPHY
-            </span>
-            <h1 className="mt-4 text-5xl sm:text-7xl font-bold tracking-tighter uppercase text-foreground">
-              Gokul P
-            </h1>
-            <p className="mt-4 text-muted-label uppercase tracking-widest text-xs font-mono font-semibold">
-              COMPUTER SCIENCE GRADUATE (2025)
-            </p>
-          </FadeIn>
-        </div>
+        <FadeIn direction="up" className="pb-16">
+          <span className="text-sm font-medium text-muted-label">Biography</span>
+          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-foreground sm:text-7xl">
+            Gokul P
+          </h1>
+          <p className="mt-4 text-base text-muted-foreground">
+            Computer Science Graduate (2025)
+          </p>
+        </FadeIn>
 
         {/* Grid Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-12 lg:gap-16">
           {/* Left Column: Summary, Goals, Certifications */}
-          <div className="lg:col-span-8 space-y-16">
+          <div className="space-y-20 lg:col-span-8">
             {/* Professional Summary */}
-            <FadeIn direction="up" delay={0.2}>
-              <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-foreground border-b border-border/40 pb-2 mb-6">
-                Professional Summary
-              </h2>
-              <div className="space-y-4 text-base sm:text-lg font-light text-muted-foreground leading-relaxed">
+            <FadeIn direction="up" delay={0.1}>
+              <h2 className={headingClass}>Professional Summary</h2>
+              <div className="space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 <p>
                   Computer Science Engineering graduate and Entry-Level Software Engineer with a strong foundation in software development, web application development, and full-stack software solutions.
                 </p>
@@ -49,11 +88,9 @@ export default function AboutPage() {
             </FadeIn>
 
             {/* Career Goals */}
-            <FadeIn direction="up" delay={0.3}>
-              <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-foreground border-b border-border/40 pb-2 mb-6">
-                Career Goals
-              </h2>
-              <div className="space-y-4 text-base text-muted-foreground font-light leading-relaxed">
+            <FadeIn direction="up" delay={0.1}>
+              <h2 className={headingClass}>Career Goals</h2>
+              <div className="space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 <p>
                   Seeking opportunities to contribute, learn, and grow as a Software Engineer, Application Support Engineer, ERP Associate, QA Engineer, or technology professional.
                 </p>
@@ -64,62 +101,29 @@ export default function AboutPage() {
             </FadeIn>
 
             {/* Certifications Section */}
-            <FadeIn direction="up" delay={0.4}>
-              <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-foreground border-b border-border/40 pb-2 mb-6">
-                Certifications
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    title: "Oracle Cloud Infrastructure 2023 Certified Foundations Associate",
-                    issuer: "Oracle University",
-                    date: "April 2024",
-                    pdf: "/certificates/Gokul eCertificate.pdf"
-                  },
-                  {
-                    title: "Networking Essentials",
-                    issuer: "Cisco Networking Academy",
-                    date: "May 2023",
-                    pdf: ""
-                  },
-                  {
-                    title: "Journey to Cloud Computing",
-                    issuer: "IBM SkillsBuild",
-                    date: "September 2024",
-                    pdf: "/certificates/JourneytoCloudEnvisioningYourSolution_Badge20240914-7-4uzv0r.pdf"
-                  },
-                  {
-                    title: "Figma UI/UX Design Masterclass",
-                    issuer: "Figma UI/UX",
-                    date: "November 2024",
-                    pdf: "/certificates/Gokul_UI_UX_Designing_Certificate.pdf"
-                  },
-                  {
-                    title: "MongoDB Node.js Developer Path for SmartBridge",
-                    issuer: "MongoDB",
-                    date: "September 2024",
-                    pdf: "/certificates/gokul-p-0ced2c89-ce8d-4e35-972a-5c22632e1ecb-certificate.pdf"
-                  }
-                ].map((cert, cIdx) => {
+            <FadeIn direction="up" delay={0.1}>
+              <h2 className={headingClass}>Certifications</h2>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {certificates.map((cert, cIdx) => {
                   const cardContent = (
                     <>
                       <div>
-                        <h4 className="text-sm font-bold uppercase tracking-tight text-foreground transition-colors group-hover:text-foreground">
+                        <h4 className="text-base font-semibold leading-snug tracking-tight text-foreground">
                           {cert.title}
                         </h4>
                         {cert.issuer && (
-                          <p className="text-xs text-muted-foreground font-mono mt-1">
+                          <p className="mt-2 text-sm text-muted-foreground">
                             {cert.issuer}
                           </p>
                         )}
                       </div>
-                      <span className="text-[10px] text-muted-label font-mono mt-4 block font-semibold">
+                      <span className="mt-6 block text-xs text-muted-label">
                         {cert.date}
                       </span>
                     </>
                   )
 
-                  const cardClass = "group block border border-border/80 bg-card p-5 rounded-xl flex flex-col justify-between hover:border-accent/40 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-left"
+                  const cardClass = "group flex flex-col justify-between rounded-2xl bg-card p-6 transition-colors duration-200 hover:bg-secondary"
 
                   if (cert.pdf) {
                     return (
@@ -136,10 +140,7 @@ export default function AboutPage() {
                   }
 
                   return (
-                    <div
-                      key={cIdx}
-                      className={cardClass}
-                    >
+                    <div key={cIdx} className={cardClass}>
                       {cardContent}
                     </div>
                   )
@@ -149,49 +150,44 @@ export default function AboutPage() {
           </div>
 
           {/* Right Column: Education, Technical Skills, Buttons */}
-          <div className="lg:col-span-4 space-y-12">
+          <div className="space-y-16 lg:col-span-4">
             {/* Education Block */}
-            <FadeIn direction="up" delay={0.35}>
-              <h3 className="text-xs uppercase tracking-widest text-muted-label font-mono font-bold border-b border-border/40 pb-2 mb-4">
+            <FadeIn direction="up" delay={0.15}>
+              <h3 className="mb-6 border-b border-border pb-4 text-lg font-semibold tracking-tight text-foreground">
                 Education
               </h3>
-              <div className="font-mono text-xs text-foreground space-y-6">
+              <div className="space-y-8 text-sm">
                 <div className="space-y-1">
-                  <div className="font-bold uppercase tracking-tight text-foreground">B.E. COMPUTER SCIENCE & ENGINEERING</div>
-                  <div className="text-secondary-foreground">Anand Institute of Higher Technology</div>
-                  <div className="text-muted-label font-semibold mt-1">2021 – 2025</div>
-                  <div className="text-foreground/90 font-semibold">CGPA: 7.84 / 10</div>
+                  <div className="font-semibold text-foreground">B.E. Computer Science &amp; Engineering</div>
+                  <div className="text-muted-foreground">Anand Institute of Higher Technology</div>
+                  <div className="text-muted-label">2021 – 2025</div>
+                  <div className="font-medium text-foreground">CGPA: 7.84 / 10</div>
                 </div>
-                <div className="space-y-1 border-t border-border/20 pt-4">
-                  <div className="font-bold uppercase tracking-tight text-foreground">HIGHER SECONDARY (XII)</div>
-                  <div className="text-secondary-foreground">A.V.Rm.V Matric Higher Secondary School</div>
-                  <div className="text-muted-label font-semibold mt-1">2020 – 2021</div>
-                  <div className="text-foreground/90 font-semibold">Score: 81.93%</div>
+                <div className="space-y-1">
+                  <div className="font-semibold text-foreground">Higher Secondary (XII)</div>
+                  <div className="text-muted-foreground">A.V.Rm.V Matric Higher Secondary School</div>
+                  <div className="text-muted-label">2020 – 2021</div>
+                  <div className="font-medium text-foreground">Score: 81.93%</div>
                 </div>
-                <div className="space-y-1 border-t border-border/20 pt-4">
-                  <div className="font-bold uppercase tracking-tight text-foreground">SECONDARY SCHOOL (X)</div>
-                  <div className="text-secondary-foreground">A.V.Rm.V Matric Higher Secondary School</div>
-                  <div className="text-muted-label font-semibold mt-1">2018 – 2019</div>
-                  <div className="text-foreground/90 font-semibold">Score: 71.6%</div>
+                <div className="space-y-1">
+                  <div className="font-semibold text-foreground">Secondary School (X)</div>
+                  <div className="text-muted-foreground">A.V.Rm.V Matric Higher Secondary School</div>
+                  <div className="text-muted-label">2018 – 2019</div>
+                  <div className="font-medium text-foreground">Score: 71.6%</div>
                 </div>
               </div>
             </FadeIn>
 
             {/* Technical Skills Block */}
-            <FadeIn direction="up" delay={0.4}>
-              <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-mono font-medium border-b border-border/40 pb-2 mb-4">
+            <FadeIn direction="up" delay={0.2}>
+              <h3 className="mb-6 border-b border-border pb-4 text-lg font-semibold tracking-tight text-foreground">
                 Technical Skills
               </h3>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "Python", "C", "JavaScript", "HTML", "CSS", "Flask", "PHP",
-                  "MySQL", "Git", "OpenCV", "Figma", "Oracle Cloud Infrastructure",
-                  "SAP / ERP Fundamentals", "REST API Integration", "Authentication Systems",
-                  "Full Stack Development", "AES Encryption", "Steganography", "Database Integration"
-                ].map((skill) => (
+                {technicalSkills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-border bg-white px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider text-muted-foreground hover:border-accent hover:text-accent transition-colors duration-200 cursor-default shadow-sm"
+                    className="rounded-full bg-secondary px-3 py-1.5 text-sm text-secondary-foreground"
                   >
                     {skill}
                   </span>
@@ -200,45 +196,26 @@ export default function AboutPage() {
             </FadeIn>
 
             {/* Portals & Resume */}
-            <FadeIn direction="up" delay={0.45}>
-              <h3 className="text-xs uppercase tracking-widest text-muted-label font-mono font-bold border-b border-border/40 pb-2 mb-4">
-                Credentials & Portals
+            <FadeIn direction="up" delay={0.25}>
+              <h3 className="mb-6 border-b border-border pb-4 text-lg font-semibold tracking-tight text-foreground">
+                Credentials &amp; Portals
               </h3>
               <div className="space-y-3">
-                <ResumeButton variant="secondary" className="w-full text-xs font-mono py-2.5 justify-center border-border bg-card hover:bg-foreground hover:text-background" />
-                
-                <a
-                  href={siteConfig.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full group inline-flex items-center justify-center rounded-full font-mono text-xs font-semibold border border-foreground bg-white text-foreground hover:border-accent hover:text-accent px-6 py-2.5 transition-all duration-300 active:scale-95 hover:-translate-y-0.5 cursor-pointer shadow-sm"
-                >
-                  <span className="flex items-center gap-2">
-                    <GithubIcon size={12} />
-                    GitHub
-                  </span>
+                <ResumeButton variant="secondary" className="w-full justify-center" />
+
+                <a href={siteConfig.github} target="_blank" rel="noreferrer" className={outlineLink}>
+                  <GithubIcon size={14} />
+                  GitHub
                 </a>
-                
-                <a
-                  href={siteConfig.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full group inline-flex items-center justify-center rounded-full font-mono text-xs font-semibold border border-foreground bg-white text-foreground hover:border-accent hover:text-accent px-6 py-2.5 transition-all duration-300 active:scale-95 hover:-translate-y-0.5 cursor-pointer shadow-sm"
-                >
-                  <span className="flex items-center gap-2">
-                    <LinkedinIcon size={12} />
-                    LinkedIn
-                  </span>
+
+                <a href={siteConfig.linkedin} target="_blank" rel="noreferrer" className={outlineLink}>
+                  <LinkedinIcon size={14} />
+                  LinkedIn
                 </a>
-                
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="w-full group inline-flex items-center justify-center rounded-full font-mono text-xs font-semibold border border-foreground bg-white text-foreground hover:border-accent hover:text-accent px-6 py-2.5 transition-all duration-300 active:scale-95 hover:-translate-y-0.5 cursor-pointer shadow-sm"
-                >
-                  <span className="flex items-center gap-2">
-                    <Mail size={12} />
-                    Email
-                  </span>
+
+                <a href={`mailto:${siteConfig.email}`} className={outlineLink}>
+                  <Mail size={14} />
+                  Email
                 </a>
               </div>
             </FadeIn>

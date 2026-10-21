@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
   --color-background: var(--background);
@@ -29,6 +29,7 @@
   --color-decorative: var(--decorative);
 
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-accent-foreground: var(--accent-foreground);
 
   --color-destructive: var(--destructive);
@@ -43,76 +44,62 @@
   --radius-sm: calc(var(--radius) - 4px);
 }
 
+/* One dark theme. Contrast targets: body 9:1+, muted 6:1+, accent 8:1+ on background. */
 :root {
-  --background: #F7F4EE;
-  --foreground: #111111;
+  color-scheme: dark;
 
-  --card: #FFFFFF;
-  --card-foreground: #111111;
+  --background: #0A0A0B;
+  --foreground: #F4F4F5;
 
-  --popover: #FFFFFF;
-  --popover-foreground: #111111;
+  --card: #121214;
+  --card-foreground: #F4F4F5;
 
-  --primary: #C96A3D;
-  --primary-foreground: #FFFFFF;
+  --popover: #121214;
+  --popover-foreground: #F4F4F5;
 
-  --secondary: #FFFFFF;
-  --secondary-foreground: #444444; /* Secondary Text: #444444 */
+  --primary: #FF8A5B;
+  --primary-foreground: #0A0A0B;
 
-  --muted: #F5F2EC;
-  --muted-foreground: #2F2F2F; /* Body paragraphs: #2F2F2F */
-  --muted-label: #5A5A5A;       /* Muted labels: #5A5A5A */
-  --decorative: #A8A29A;        /* Large decorative text: #A8A29A */
+  --secondary: #1A1A1D;
+  --secondary-foreground: #D4D4D8;
 
-  --accent: #C96A3D;
-  --accent-foreground: #FFFFFF;
+  --muted: #17171A;
+  --muted-foreground: #B4B4BC;
+  --muted-label: #9B9BA4;
+  --decorative: #8A8A93;
 
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
+  --accent: #FF8A5B;
+  --accent-hover: #FFA27C;
+  --accent-foreground: #0A0A0B;
 
-  --border: #D9D4CC;
-  --input: #D9D4CC;
-  --ring: #C96A3D;
+  --destructive: #F87171;
+  --destructive-foreground: #0A0A0B;
+
+  --border: #26262B;
+  --input: #26262B;
+  --ring: #FF8A5B;
 
   --radius: 1rem;
 }
 
-/* Enforce the same variables for dark mode selector so it doesn't flip back to dark mode */
-.dark {
-  --background: #F7F4EE;
-  --foreground: #111111;
-  --card: #FFFFFF;
-  --card-foreground: #111111;
-  --popover: #FFFFFF;
-  --popover-foreground: #111111;
-  --primary: #C96A3D;
-  --primary-foreground: #FFFFFF;
-  --secondary: #FFFFFF;
-  --secondary-foreground: #444444;
-  --muted: #F5F2EC;
-  --muted-foreground: #2F2F2F;
-  --muted-label: #5A5A5A;
-  --decorative: #A8A29A;
-  --accent: #C96A3D;
-  --accent-foreground: #FFFFFF;
-  --border: #D9D4CC;
-  --input: #D9D4CC;
-  --ring: #C96A3D;
-  --radius: 1rem;
-}
-
-/* Base Styles */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground antialiased selection:bg-accent/20 selection:text-foreground;
+    @apply bg-background text-foreground antialiased selection:bg-accent selection:text-accent-foreground;
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
   }
 }
 
-/* Custom Scrollbar for a premium feel */
+/* Scrollbar matches the dark ground */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -123,29 +110,32 @@
   @apply bg-border rounded-full;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-muted-foreground;
+  @apply bg-muted-label;
 }
 
-/* Utility to ensure text masking works across browsers */
 .text-balance {
   text-wrap: balance;
 }
 
-/* Glassmorphism utilities */
-.glass {
-  @apply bg-white/80 backdrop-blur-xl border border-border/40 shadow-[0_8px_30px_rgba(0,0,0,0.03)];
-}
-
-/* Custom Premium Shadows and Transitions */
-.card-premium {
-  @apply bg-card border border-border/80 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 transition-all duration-300;
-}
-
+/* Reusable button styles: flat accent fill, no shadows or glows */
 .btn-primary-styled {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent text-white px-6 py-3 text-sm font-semibold shadow-[0_4px_14px_rgba(201,106,61,0.2)] hover:bg-[#b55b31] hover:shadow-[0_6px_20px_rgba(201,106,61,0.3)] hover:-translate-y-0.5 active:translate-y-0 active:scale-95 transition-all duration-300 cursor-pointer;
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent text-accent-foreground px-6 py-3 text-sm font-semibold transition-colors duration-200 hover:bg-accent-hover active:scale-[0.98] cursor-pointer;
 }
 
 .btn-secondary-styled {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-foreground bg-white text-foreground px-6 py-3 text-sm font-semibold hover:border-accent hover:text-accent hover:-translate-y-0.5 active:translate-y-0 active:scale-95 transition-all duration-300 cursor-pointer;
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent text-foreground px-6 py-3 text-sm font-semibold transition-colors duration-200 hover:border-accent hover:text-accent active:scale-[0.98] cursor-pointer;
 }
 
+/* Honour reduced motion for CSS transitions too */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

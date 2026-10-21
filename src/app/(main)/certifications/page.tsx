@@ -2,61 +2,56 @@
 
 import { certifications } from "@/data/certifications"
 import { FadeIn } from "@/components/animations/fade-in"
-import { StaggerContainer } from "@/components/animations/stagger-container"
 import { PageTransition } from "@/components/animations/transitions/page-transition"
-import { Award, ShieldCheck, CheckCircle } from "lucide-react"
+import { Award, ShieldCheck } from "lucide-react"
 
 export default function CertificationsPage() {
   return (
     <PageTransition>
-      <div className="relative px-6 md:px-12 py-24 sm:py-32 max-w-screen-xl mx-auto min-h-[80vh]">
+      <div className="relative mx-auto min-h-[80vh] max-w-screen-xl px-6 py-24 md:px-12">
         {/* Header */}
-        <div className="border-b border-border/40 pb-12 mb-16 max-w-3xl">
-          <FadeIn direction="up">
-            <span className="text-xs uppercase tracking-widest text-muted-label font-mono font-semibold block">
-              // VERIFICATION
-            </span>
-            <h1 className="mt-4 text-5xl sm:text-7xl font-bold tracking-tighter uppercase text-foreground">
-              Technical Credentials
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground font-light leading-relaxed">
-              Academic certifications and technical credentials validating skills in cloud architectures, networking configurations, software design, and user interfaces.
-            </p>
-          </FadeIn>
-        </div>
+        <FadeIn direction="up" className="max-w-3xl pb-16">
+          <span className="text-sm font-medium text-muted-label">Verification</span>
+          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-foreground sm:text-7xl">
+            Technical Credentials
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            Academic certifications and technical credentials validating skills in cloud architectures, networking configurations, software design, and user interfaces.
+          </p>
+        </FadeIn>
 
         {/* Certifications Grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {certifications.map((cert, idx) => (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {certifications.map((cert) => (
             <FadeIn
               key={cert.name}
               direction="up"
-              className="group border border-border/80 bg-card rounded-2xl p-6 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:border-accent/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[180px]"
+              className="flex min-h-[200px] flex-col justify-between rounded-3xl bg-card p-8"
             >
-              <div className="flex items-start gap-4">
-                <div className="p-3 border border-border/60 rounded-xl bg-[#F5F2EC]/50 text-accent transition-colors duration-300">
+              <div className="flex items-start gap-5">
+                <div className="shrink-0 rounded-xl bg-secondary p-3 text-accent">
                   <Award size={22} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold uppercase tracking-tight text-foreground leading-snug">
+                  <h3 className="text-xl font-semibold leading-snug tracking-tight text-foreground">
                     {cert.name}
                   </h3>
-                  <span className="text-xs font-mono text-muted-label block mt-1.5 font-semibold">
-                    ISSUED BY: {cert.issuer}
+                  <span className="mt-2 block text-sm text-muted-foreground">
+                    Issued by {cert.issuer}
                   </span>
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-border/30 flex justify-between items-center text-xs font-mono text-muted-label font-semibold">
-                <span>YEAR: {cert.year}</span>
-                <span className="flex items-center gap-1.5 text-accent font-bold">
-                  <ShieldCheck size={14} className="text-accent" />
-                  VERIFIED ACTIVE
+              <div className="mt-8 flex items-center justify-between text-sm text-muted-label">
+                <span>Year {cert.year}</span>
+                <span className="flex items-center gap-1.5 font-medium text-accent">
+                  <ShieldCheck size={14} />
+                  Verified active
                 </span>
               </div>
             </FadeIn>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </PageTransition>
   )

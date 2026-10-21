@@ -3,9 +3,8 @@
 import { useState } from "react"
 import { siteConfig } from "@/data/site-config"
 import { FadeIn } from "@/components/animations/fade-in"
-import { MagneticButton } from "@/components/animations/magnetic-button"
 import { PageTransition } from "@/components/animations/transitions/page-transition"
-import { Mail, Copy, Check } from "lucide-react"
+import { Copy, Check } from "lucide-react"
 import { GithubIcon, LinkedinIcon } from "@/components/ui/icons"
 
 export default function ContactPage() {
@@ -19,77 +18,59 @@ export default function ContactPage() {
 
   return (
     <PageTransition>
-      <div className="relative px-6 md:px-12 py-24 sm:py-32 max-w-screen-xl mx-auto min-h-[80vh] flex flex-col justify-center">
+      <div className="relative mx-auto flex min-h-[80vh] max-w-screen-xl flex-col justify-center px-6 py-24 md:px-12">
         {/* Header */}
-        <div className="border-b border-border/40 pb-12 mb-16 max-w-3xl">
-          <FadeIn direction="up">
-            <span className="text-xs uppercase tracking-widest text-muted-foreground font-mono font-medium block">
-              // COMMUNICATIONS
-            </span>
-            <h1 className="mt-4 text-5xl sm:text-7xl font-bold tracking-tighter uppercase text-foreground">
-              Get In Touch
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground font-light leading-relaxed">
-              If you are a recruiter, hiring manager, or software engineer looking to discuss technical opportunities, cloud architectures, or backend systems, reach out.
-            </p>
-          </FadeIn>
-        </div>
+        <FadeIn direction="up" className="max-w-3xl pb-16">
+          <span className="text-sm font-medium text-muted-label">Communications</span>
+          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-foreground sm:text-7xl">
+            Get In Touch
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            If you are a recruiter, hiring manager, or software engineer looking to discuss technical opportunities, cloud architectures, or backend systems, reach out.
+          </p>
+        </FadeIn>
 
         {/* Contact info grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2">
           {/* Email Copy Card */}
-          <FadeIn
-            direction="up"
-            delay={0.2}
-            className="group border border-border/80 bg-card p-8 rounded-3xl flex flex-col justify-between min-h-[220px] shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:border-accent/40 hover:-translate-y-1.5 transition-all duration-300"
-          >
+          <FadeIn direction="up" delay={0.1} className="flex min-h-[240px] flex-col justify-between rounded-3xl bg-card p-8 sm:p-10">
             <div>
-              <span className="text-xs uppercase tracking-widest text-accent font-mono font-bold block mb-6">
-                PRIMARY EMAIL
-              </span>
-              <h2 className="text-2xl font-mono text-foreground font-semibold break-all">
+              <span className="block text-sm font-medium text-accent">Primary email</span>
+              <h2 className="mt-6 break-all text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
                 {siteConfig.email}
               </h2>
             </div>
 
-            <div className="mt-8">
-              <MagneticButton>
-                <button
-                  onClick={copyEmail}
-                  className="flex items-center gap-2 rounded-full bg-accent text-white px-6 py-3 text-xs font-semibold shadow-[0_4px_14px_rgba(201,106,61,0.15)] hover:bg-[#b85e34] hover:shadow-[0_8px_20px_rgba(201,106,61,0.25)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
-                >
-                  {copied ? (
-                    <>
-                      <Check size={14} />
-                      COPIED!
-                    </>
-                  ) : (
-                    <>
-                      <Copy size={14} />
-                      COPY EMAIL
-                    </>
-                  )}
-                </button>
-              </MagneticButton>
+            <div className="mt-10">
+              <button
+                onClick={copyEmail}
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-colors duration-200 hover:bg-accent-hover active:scale-[0.98] cursor-pointer"
+              >
+                {copied ? (
+                  <>
+                    <Check size={14} />
+                    Copied
+                  </>
+                ) : (
+                  <>
+                    <Copy size={14} />
+                    Copy email
+                  </>
+                )}
+              </button>
             </div>
           </FadeIn>
 
-          {/* Social vectors */}
-          <FadeIn
-            direction="up"
-            delay={0.3}
-            className="group border border-border/80 bg-card p-8 rounded-3xl flex flex-col justify-between min-h-[220px] shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:border-accent/40 hover:-translate-y-1.5 transition-all duration-300"
-          >
+          {/* Social links */}
+          <FadeIn direction="up" delay={0.2} className="flex min-h-[240px] flex-col justify-between rounded-3xl bg-card p-8 sm:p-10">
             <div>
-              <span className="text-xs uppercase tracking-widest text-accent font-mono font-bold block mb-6">
-                PROFESSIONAL PORTALS
-              </span>
-              <div className="space-y-4">
+              <span className="block text-sm font-medium text-accent">Professional portals</span>
+              <div className="mt-6 space-y-3">
                 <a
                   href={siteConfig.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors font-mono text-sm border-b border-border/40 pb-2.5"
+                  className="flex items-center gap-3 rounded-xl bg-secondary px-5 py-4 text-foreground transition-colors duration-200 hover:text-accent"
                 >
                   <GithubIcon size={16} />
                   <span>github.com/Iamgokul7</span>
@@ -98,7 +79,7 @@ export default function ContactPage() {
                   href={siteConfig.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors font-mono text-sm pb-1"
+                  className="flex items-center gap-3 rounded-xl bg-secondary px-5 py-4 text-foreground transition-colors duration-200 hover:text-accent"
                 >
                   <LinkedinIcon size={16} />
                   <span>linkedin.com/in/gokulp0807</span>
@@ -106,8 +87,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="text-[10px] font-mono text-muted-label mt-8 select-none font-semibold">
-              SECURE ENVELOPE ENCRYPTION ACTIVE
+            <div className="mt-10 text-sm text-muted-label">
+              Secure envelope encryption active
             </div>
           </FadeIn>
         </div>

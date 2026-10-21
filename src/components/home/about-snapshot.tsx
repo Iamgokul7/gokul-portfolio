@@ -4,24 +4,20 @@ import { FadeIn } from "@/components/animations/fade-in"
 
 export function AboutSnapshot() {
   return (
-    <section className="relative px-6 md:px-12 py-32 sm:py-48 max-w-screen-2xl mx-auto border-t border-border/40">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-        {/* Left Column: Number & Label */}
-        <div className="lg:col-span-4 flex flex-col justify-start">
+    <section id="about" className="mx-auto w-full max-w-screen-2xl scroll-mt-24 px-6 py-24 md:px-12">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-4">
           <FadeIn direction="up">
-            <h2 className="text-2xl sm:text-3xl font-bold font-mono tracking-wider uppercase text-foreground">
-              ABOUT
-            </h2>
+            <h2 className="text-sm font-medium text-muted-label">About</h2>
           </FadeIn>
         </div>
 
-        {/* Right Column: Editorial Text (No Stats cards) */}
         <div className="lg:col-span-8">
-          <FadeIn direction="up" delay={0.2} className="max-w-3xl space-y-6">
-            <p className="text-2xl sm:text-3xl font-light text-foreground leading-snug tracking-tight text-balance">
+          <FadeIn direction="up" delay={0.1} className="max-w-3xl space-y-6">
+            <p className="text-2xl font-medium leading-snug tracking-tight text-foreground text-balance sm:text-3xl">
               Computer Science Engineering graduate with practical experience gained through software development internships and academic projects.
             </p>
-            <div className="space-y-4 text-base sm:text-lg font-light text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
               <p>
                 Skilled in Python, Flask, JavaScript, HTML, CSS, PHP, MySQL, OpenCV, and enterprise software fundamentals.
               </p>

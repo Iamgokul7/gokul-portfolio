@@ -1,15 +1,19 @@
 import { HeroSection } from "@/components/home/hero-section"
 import { AboutSnapshot } from "@/components/home/about-snapshot"
-import { SkillsMarquee } from "@/components/home/skills-marquee"
+import { FeaturedProjects } from "@/components/home/featured-projects"
+import { SkillsSection } from "@/components/home/skills-section"
+import { CTASection } from "@/components/home/cta-section"
 import { PageTransition } from "@/components/animations/transitions/page-transition"
 
 export default function HomePage() {
   return (
     <PageTransition>
-      <div className="relative flex flex-col w-full overflow-hidden">
+      <div className="flex w-full flex-col">
         <HeroSection />
         <AboutSnapshot />
-        <SkillsMarquee />
+        <FeaturedProjects />
+        <SkillsSection />
+        <CTASection />
       </div>
     </PageTransition>
   )

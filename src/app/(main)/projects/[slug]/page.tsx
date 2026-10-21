@@ -5,11 +5,12 @@ import { projects } from "@/data/projects"
 import { notFound } from "next/navigation"
 import { FadeIn } from "@/components/animations/fade-in"
 import { PageTransition } from "@/components/animations/transitions/page-transition"
-import { MagneticButton } from "@/components/animations/magnetic-button"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { GithubIcon } from "@/components/ui/icons"
 import { ImageGallery } from "@/components/projects/image-gallery"
+
+const sectionHeading = "text-2xl font-semibold tracking-tight text-foreground mb-6"
 
 export default function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = React.use(params)
@@ -21,59 +22,57 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
 
   return (
     <PageTransition>
-      <div className="relative px-6 md:px-12 py-24 sm:py-32 max-w-screen-xl mx-auto min-h-screen">
+      <div className="relative mx-auto min-h-screen max-w-screen-xl px-6 py-24 md:px-12">
         {/* Back Navigation */}
         <div className="mb-12">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors duration-200"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
             <ArrowLeft size={14} />
-            BACK TO WORKS
+            Back to work
           </Link>
         </div>
 
         {/* 1. Hero Section */}
-        <div className="border-b border-border/40 pb-12 mb-16">
-          <FadeIn direction="up">
-            <span className="text-xs font-mono text-muted-label uppercase tracking-widest block mb-4 font-semibold">
-              {project.typeLabel}
-            </span>
-            <h1 className="text-3xl sm:text-6xl font-bold tracking-tighter uppercase text-foreground leading-none break-words">
-              {project.title}
-            </h1>
-            <div className="flex flex-wrap gap-2 mt-6">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-border bg-white px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider text-muted-foreground hover:border-accent hover:text-accent transition-colors duration-200 cursor-default shadow-sm"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
+        <FadeIn direction="up" className="pb-16">
+          <span className="block text-sm font-medium text-accent">
+            {project.typeLabel}
+          </span>
+          <h1 className="mt-4 break-words text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl">
+            {project.title}
+          </h1>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-secondary px-3 py-1.5 text-xs text-secondary-foreground"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </FadeIn>
 
         {/* Content Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
           {/* Main Case Study Content (Left) */}
-          <div className="lg:col-span-8 space-y-16">
+          <div className="space-y-20 lg:col-span-8">
             {/* 2. Project Overview */}
             <FadeIn direction="up">
-              <h2 className="text-lg font-mono uppercase tracking-widest text-foreground/80 border-b border-border/30 pb-2 mb-4">Project Overview</h2>
-              <p className="whitespace-pre-line text-lg text-muted-foreground font-light leading-relaxed mb-6">
+              <h2 className={sectionHeading}>Project Overview</h2>
+              <p className="mb-8 whitespace-pre-line text-lg font-light leading-relaxed text-muted-foreground">
                 {project.description}
               </p>
               {project.details.length > 0 && (
-                <div className="mt-6">
-                  <h3 className="text-xs font-mono uppercase tracking-widest text-foreground font-semibold mb-3">
-                    {project.id === "erpilot" ? "Key Achievements" : "Key Highlights"}
+                <div>
+                  <h3 className="mb-4 text-sm font-semibold text-foreground">
+                    {project.id === "erpilot" ? "Key achievements" : "Key highlights"}
                   </h3>
-                  <ul className="space-y-3 text-sm font-light text-muted-foreground/90 leading-relaxed">
+                  <ul className="space-y-3 text-base leading-relaxed text-muted-foreground">
                     {project.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5">
-                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-foreground/60" />
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
                         <span>{detail}</span>
                       </li>
                     ))}
@@ -84,31 +83,31 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
 
             {/* 3. Problem Statement */}
             <FadeIn direction="up">
-              <h2 className="text-lg font-mono uppercase tracking-widest text-foreground/80 border-b border-border/30 pb-2 mb-4">Problem Statement</h2>
-              <p className="text-base text-muted-foreground font-light leading-relaxed">
+              <h2 className={sectionHeading}>Problem Statement</h2>
+              <p className="text-base leading-relaxed text-muted-foreground">
                 {project.problem}
               </p>
             </FadeIn>
 
             {/* 4. Solution Approach */}
             <FadeIn direction="up">
-              <h2 className="text-lg font-mono uppercase tracking-widest text-foreground/80 border-b border-border/30 pb-2 mb-4">Solution Approach</h2>
-              <p className="text-base text-muted-foreground font-light leading-relaxed">
+              <h2 className={sectionHeading}>Solution Approach</h2>
+              <p className="whitespace-pre-line text-base leading-relaxed text-muted-foreground">
                 {project.solution}
               </p>
             </FadeIn>
 
             {/* 5. Architecture Overview */}
             <FadeIn direction="up">
-              <h2 className="text-lg font-mono uppercase tracking-widest text-foreground/80 border-b border-border/30 pb-2 mb-4">Architecture Overview</h2>
-              <p className={`text-base text-muted-foreground font-light leading-relaxed ${project.architectureBullets ? "mb-6" : ""}`}>
+              <h2 className={sectionHeading}>Architecture Overview</h2>
+              <p className={`whitespace-pre-line text-base leading-relaxed text-muted-foreground ${project.architectureBullets ? "mb-6" : ""}`}>
                 {project.architectureDescription}
               </p>
               {project.architectureBullets && (
-                <ul className="space-y-3 text-sm font-light text-muted-foreground leading-relaxed">
+                <ul className="space-y-3 text-base leading-relaxed text-muted-foreground">
                   {project.architectureBullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/60" />
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -118,18 +117,18 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
 
             {/* 6. Tech Stack */}
             <FadeIn direction="up">
-              <h2 className="text-lg font-mono uppercase tracking-widest text-foreground/80 border-b border-border/30 pb-2 mb-6">Tech Stack</h2>
+              <h2 className={sectionHeading}>Tech Stack</h2>
               {project.techStackGroups ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
                   {project.techStackGroups.map((group, idx) => (
-                    <div key={idx} className="space-y-3">
-                      <h3 className="text-xs font-mono uppercase tracking-widest text-foreground font-semibold border-b border-border/20 pb-1.5">
+                    <div key={idx} className="space-y-4 rounded-2xl bg-card p-6">
+                      <h3 className="text-sm font-semibold text-foreground">
                         {group.category}
                       </h3>
-                      <ul className="space-y-1.5 text-sm font-light text-muted-foreground">
+                      <ul className="space-y-2 text-sm text-muted-foreground">
                         {group.technologies.map((tech, tIdx) => (
-                          <li key={tIdx} className="flex items-center gap-2">
-                            <span className="h-1 w-1 rounded-full bg-foreground/30" />
+                          <li key={tIdx} className="flex items-center gap-3">
+                            <span className="h-1 w-1 rounded-full bg-accent" />
                             <span>{tech}</span>
                           </li>
                         ))}
@@ -142,7 +141,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-border bg-white px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-muted-foreground hover:border-accent hover:text-accent transition-colors duration-200 cursor-default shadow-sm"
+                      className="rounded-full bg-secondary px-3 py-1.5 text-sm text-secondary-foreground"
                     >
                       {tag}
                     </span>
@@ -153,11 +152,11 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
 
             {/* 7. Features */}
             <FadeIn direction="up">
-              <h2 className="text-lg font-mono uppercase tracking-widest text-foreground/80 border-b border-border/30 pb-2 mb-4">Key Features</h2>
-              <ul className="space-y-3 text-sm font-light text-muted-foreground leading-relaxed">
+              <h2 className={sectionHeading}>Key Features</h2>
+              <ul className="space-y-3 text-base leading-relaxed text-muted-foreground">
                 {project.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/60" />
+                  <li key={idx} className="flex items-start gap-3">
+                    <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -167,11 +166,11 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
             {/* System Modules (Optional) */}
             {project.modules && (
               <FadeIn direction="up">
-                <h2 className="text-lg font-mono uppercase tracking-widest text-foreground/80 border-b border-border/30 pb-2 mb-4">System Modules</h2>
-                <ul className="space-y-3 text-sm font-light text-muted-foreground leading-relaxed">
+                <h2 className={sectionHeading}>System Modules</h2>
+                <ul className="space-y-3 text-base leading-relaxed text-muted-foreground">
                   {project.modules.map((module, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/60" />
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
                       <span>{module}</span>
                     </li>
                   ))}
@@ -186,60 +185,59 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
 
             {/* 10. Lessons Learned */}
             <FadeIn direction="up">
-              <h2 className="text-lg font-mono uppercase tracking-widest text-foreground/80 border-b border-border/30 pb-2 mb-4">Lessons Learned</h2>
-              <div className="rounded-2xl border border-border/80 bg-[#F5F2EC]/40 p-6 sm:p-8 font-light text-muted-foreground leading-relaxed">
-                <p className="text-xs font-mono uppercase tracking-widest text-accent font-bold mb-4">Retrospective</p>
-                <p className="text-sm sm:text-base text-muted-foreground italic leading-relaxed">
-                  &quot;{project.lessonsLearned}&quot;
+              <h2 className={sectionHeading}>Lessons Learned</h2>
+              <div className="rounded-3xl bg-card p-6 sm:p-10">
+                <p className="mb-4 text-sm font-medium text-accent">Retrospective</p>
+                <p className="whitespace-pre-line text-base leading-relaxed text-muted-foreground">
+                  {project.lessonsLearned}
                 </p>
               </div>
             </FadeIn>
           </div>
 
           {/* Project Sidebar metadata (Right) */}
-          <div className="lg:col-span-4 space-y-8">
-            <FadeIn direction="up" delay={0.2} className="border border-border/80 bg-card rounded-2xl p-6 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.03)] sticky top-28">
-              <h3 className="text-xs uppercase tracking-widest text-foreground font-mono font-bold mb-6 border-b border-border/40 pb-2">
+          <div className="lg:col-span-4">
+            <FadeIn direction="up" delay={0.2} className="sticky top-28 rounded-3xl bg-card p-6 sm:p-8">
+              <h3 className="mb-6 text-lg font-semibold tracking-tight text-foreground">
                 Project Details
               </h3>
-              <ul className="space-y-4 text-xs font-mono text-muted-foreground leading-relaxed">
+              <ul className="space-y-4 text-sm text-muted-foreground">
                 {project.sidebarFields.map((field, idx) => (
-                  <li key={idx} className={`flex justify-between items-start ${idx < project.sidebarFields.length - 1 ? 'border-b border-border/30 pb-2' : ''}`}>
-                    <span className="shrink-0 mr-4">{field.label}</span>
-                    <span className="text-foreground whitespace-pre-line text-right">{field.value}</span>
+                  <li
+                    key={idx}
+                    className={`flex items-start justify-between gap-6 ${idx < project.sidebarFields.length - 1 ? "border-b border-border pb-4" : ""}`}
+                  >
+                    <span className="shrink-0 text-muted-label">{field.label}</span>
+                    <span className="whitespace-pre-line text-right text-foreground">{field.value}</span>
                   </li>
                 ))}
               </ul>
 
               {/* 9. GitHub Repository Link */}
-              <div className="mt-8 pt-6 border-t border-border/30 flex flex-col gap-4">
+              <div className="mt-8 flex flex-col gap-3">
                 {project.github && (
-                  <MagneticButton>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center justify-center gap-2 rounded-full bg-accent text-white px-6 py-3 text-xs font-semibold shadow-[0_4px_14px_rgba(201,106,61,0.15)] hover:bg-[#b85e34] hover:shadow-[0_8px_20px_rgba(201,106,61,0.25)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 w-full"
-                    >
-                      <GithubIcon size={14} />
-                      View Repository
-                    </a>
-                  </MagneticButton>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-colors duration-200 hover:bg-accent-hover active:scale-[0.98]"
+                  >
+                    <GithubIcon size={14} />
+                    View repository
+                  </a>
                 )}
                 {project.liveDemo && (
-                  <div className="flex flex-col items-center gap-2 mt-2">
-                    <MagneticButton>
-                      <a
-                        href={project.liveDemo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center justify-center gap-2 rounded-full border border-accent bg-transparent text-accent px-6 py-3 text-xs font-semibold hover:bg-accent/10 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 w-full"
-                      >
-                        Live Demo
-                      </a>
-                    </MagneticButton>
+                  <div className="flex flex-col items-center gap-3">
+                    <a
+                      href={project.liveDemo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex w-full items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:border-accent hover:text-accent active:scale-[0.98]"
+                    >
+                      Live demo
+                    </a>
                     {project.demoBadge && (
-                      <span className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground bg-secondary/50 px-2.5 py-1 rounded-full border border-border/50 text-center">
+                      <span className="rounded-full bg-secondary px-3 py-1 text-center text-xs text-muted-foreground">
                         {project.demoBadge}
                       </span>
                     )}
@@ -253,4 +251,3 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
     </PageTransition>
   )
 }
-
