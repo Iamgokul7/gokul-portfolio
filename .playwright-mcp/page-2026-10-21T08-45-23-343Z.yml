@@ -1,0 +1,139 @@
+- generic [active] [ref=e10]:
+  - generic [ref=e5] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e6]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [aria-hidden] [ref=e14]: "0"
+          - generic [ref=e15]: "1"
+        - generic [ref=e16]: Issue
+      - button "Collapse issues badge" [ref=e17]
+  - generic [ref=e20]:
+    - banner [ref=e21]:
+      - navigation "Primary" [ref=e22]:
+        - list [ref=e24]:
+          - listitem [ref=e25]:
+            - link "Home" [ref=e26] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e27]:
+            - link "About" [ref=e28] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e29]:
+            - link "Projects" [ref=e30] [cursor=pointer]:
+              - /url: /projects
+          - listitem [ref=e31]:
+            - link "Work" [ref=e32] [cursor=pointer]:
+              - /url: /experience
+    - main [ref=e33]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - heading "Full Stack & AI Engineer — Open to Work" [level=1] [ref=e37]
+          - paragraph [ref=e41]: CSE graduate with 4 internships, 6 projects, and a peer-reviewed publication. Skilled in Python, FastAPI, Flask, JavaScript, and AI/LLM integration. Seeking entry-level roles in Software Development, QA, ERP, or Application Support.
+          - generic [ref=e42]:
+            - button "Download Resume" [ref=e43] [cursor=pointer]
+            - link "View featured projects" [ref=e47] [cursor=pointer]:
+              - /url: /projects
+          - generic [ref=e48]:
+            - generic [ref=e49]: Chennai, Tamil Nadu, India
+            - generic [ref=e50]: Open to Software Engineer, ERP, QA & Application Support roles
+        - generic [ref=e52]:
+          - heading "About" [level=2] [ref=e55]
+          - generic [ref=e57]:
+            - paragraph [ref=e58]: Computer Science Engineering graduate with practical experience gained through software development internships and academic projects.
+            - generic [ref=e59]:
+              - paragraph [ref=e60]: Skilled in Python, Flask, JavaScript, HTML, CSS, PHP, MySQL, OpenCV, and enterprise software fundamentals.
+              - paragraph [ref=e61]: Built projects including a Graphical Password Authentication System using AES encryption and DWT steganography, a Real Estate Management System, and ERPilot AI, an AI-assisted ERP concept platform.
+              - paragraph [ref=e62]: Seeking opportunities to contribute, learn, and grow in software engineering, application support, ERP, QA, and technology-driven environments.
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - heading "Selected work" [level=2] [ref=e65]
+            - paragraph [ref=e66]: Detailed case studies of engineered systems, custom cybersecurity protocols, and cloud-native integrations.
+          - generic [ref=e67]:
+            - article [ref=e69]:
+              - heading "ResumeTailor AI" [level=3] [ref=e70]
+              - paragraph [ref=e71]: AI-powered resume customization engine with ATS-safe PDF generation.
+              - generic [ref=e72]:
+                - generic [ref=e73]: Python
+                - generic [ref=e74]: FastAPI
+                - generic [ref=e75]: Gemini API
+                - generic [ref=e76]: WeasyPrint
+              - link "View case study →" [ref=e78] [cursor=pointer]:
+                - /url: /projects/resumetailor-ai
+            - article [ref=e80]:
+              - heading "ERPilot AI" [level=3] [ref=e81]
+              - paragraph [ref=e82]: Multi-tenant ERP SaaS with AI assistant and role-based access control.
+              - generic [ref=e83]:
+                - generic [ref=e84]: Python
+                - generic [ref=e85]: Flask
+                - generic [ref=e86]: SQLite
+                - generic [ref=e87]: Docker
+              - link "View case study →" [ref=e89] [cursor=pointer]:
+                - /url: /projects/erpilot
+            - article [ref=e91]:
+              - heading "Graphical Password Auth" [level=3] [ref=e92]
+              - paragraph [ref=e93]: 3-factor auth system with AES encryption and DWT steganography. Published.
+              - generic [ref=e94]:
+                - generic [ref=e95]: Python
+                - generic [ref=e96]: Flask
+                - generic [ref=e97]: OpenCV
+                - generic [ref=e98]: AES
+              - link "View case study →" [ref=e100] [cursor=pointer]:
+                - /url: /projects/graphical-password
+            - article [ref=e102]:
+              - heading "Real Estate Management System" [level=3] [ref=e103]
+              - paragraph [ref=e104]: Full-stack property platform with booking and admin workflows.
+              - generic [ref=e105]:
+                - generic [ref=e106]: PHP
+                - generic [ref=e107]: MySQL
+                - generic [ref=e108]: JavaScript
+                - generic [ref=e109]: HTML
+              - link "View case study →" [ref=e111] [cursor=pointer]:
+                - /url: /projects/real-estate
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - heading "Skills" [level=2] [ref=e114]
+            - paragraph [ref=e115]: The languages, frameworks, and platforms I use to build and ship software.
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - heading "Languages & Frameworks" [level=3] [ref=e119]
+              - list [ref=e120]:
+                - listitem [ref=e121]: Python
+                - listitem [ref=e122]: Flask
+                - listitem [ref=e123]: JavaScript
+                - listitem [ref=e124]: HTML
+                - listitem [ref=e125]: CSS
+                - listitem [ref=e126]: PHP
+            - generic [ref=e127]:
+              - heading "Data & Security" [level=3] [ref=e129]
+              - list [ref=e130]:
+                - listitem [ref=e131]: MySQL
+                - listitem [ref=e132]: SQLite
+                - listitem [ref=e133]: OpenCV
+            - generic [ref=e134]:
+              - heading "Tools & Platforms" [level=3] [ref=e136]
+              - list [ref=e137]:
+                - listitem [ref=e138]: Git
+                - listitem [ref=e139]: Figma
+                - listitem [ref=e140]: OCI Foundations
+                - listitem [ref=e141]: SAP/ERP Fundamentals
+        - generic [ref=e143]:
+          - heading "Let's build together." [level=2] [ref=e145]: Let's buildtogether.
+          - paragraph [ref=e147]: Interested in high-security authentication systems, AI ERP integrations, or custom backend services? Get in touch.
+          - link "Get in touch" [ref=e149] [cursor=pointer]:
+            - /url: mailto:gokul.p0807@gmail.com
+    - contentinfo [ref=e153]:
+      - generic [ref=e154]:
+        - generic [ref=e155]:
+          - generic [ref=e156]:
+            - heading "Gokul P" [level=2] [ref=e157]
+            - paragraph [ref=e158]: Software Engineer
+          - generic [ref=e159]:
+            - link "GitHub" [ref=e160] [cursor=pointer]:
+              - /url: https://github.com/Iamgokul7
+            - link "LinkedIn" [ref=e161] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/gokulp0807/
+            - link "Email" [ref=e162] [cursor=pointer]:
+              - /url: mailto:gokul.p0807@gmail.com
+            - button "Resume" [ref=e163] [cursor=pointer]
+        - paragraph [ref=e168]: © 2026 Gokul P
+  - alert [ref=e169]

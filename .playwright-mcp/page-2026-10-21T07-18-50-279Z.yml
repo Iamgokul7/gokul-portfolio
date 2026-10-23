@@ -1,0 +1,205 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - banner [ref=f3e3]:
+      - navigation [ref=f3e4]:
+        - link "Gokul P" [ref=f3e5] [cursor=pointer]:
+          - /url: /
+        - list [ref=f3e6]:
+          - listitem [ref=f3e7]:
+            - link "Home" [ref=f3e8] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f3e9]:
+            - link "About" [ref=f3e10] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=f3e11]:
+            - link "Work" [ref=f3e12] [cursor=pointer]:
+              - /url: /experience
+          - listitem [ref=f3e13]:
+            - link "Projects" [ref=f3e14] [cursor=pointer]:
+              - /url: /projects
+    - main [ref=f3e15]:
+      - generic [ref=f3e17]:
+        - generic [ref=f3e19]:
+          - generic [ref=f3e20]:
+            - heading "Gokul P builds secure, AI-powered software." [level=1] [ref=f3e21]
+            - paragraph [ref=f3e25]: Computer Science Engineering graduate with hands-on experience in full stack development, AI-powered applications, enterprise software, and secure system design. Passionate about building reliable software solutions and eager to begin my career as a Software Engineer, ERP, QA, or Application Support Engineer, where I can contribute, continuously learn, and grow while solving real-world engineering challenges.
+            - generic [ref=f3e26]:
+              - button "Download Resume" [ref=f3e27] [cursor=pointer]
+              - link "View featured projects" [ref=f3e31] [cursor=pointer]:
+                - /url: /projects
+            - generic [ref=f3e32]:
+              - generic [ref=f3e33]: Chennai, Tamil Nadu, India
+              - generic [ref=f3e34]: Open to Software Engineer, ERP, QA & Application Support roles
+          - img "ERPilot AI dashboard showing sales, stock, and activity panels" [ref=f3e36]
+        - generic [ref=f3e38]:
+          - heading "About" [level=2] [ref=f3e41]
+          - generic [ref=f3e43]:
+            - paragraph [ref=f3e44]: Computer Science Engineering graduate with practical experience gained through software development internships and academic projects.
+            - generic [ref=f3e45]:
+              - paragraph [ref=f3e46]: Skilled in Python, Flask, JavaScript, HTML, CSS, PHP, MySQL, OpenCV, and enterprise software fundamentals.
+              - paragraph [ref=f3e47]: Built projects including a Graphical Password Authentication System using AES encryption and DWT steganography, a Real Estate Management System, and ERPilot AI, an AI-assisted ERP concept platform.
+              - paragraph [ref=f3e48]: Seeking opportunities to contribute, learn, and grow in software engineering, application support, ERP, QA, and technology-driven environments.
+        - generic [ref=f3e49]:
+          - generic [ref=f3e50]:
+            - heading "Selected work" [level=2] [ref=f3e51]
+            - paragraph [ref=f3e52]: Detailed case studies of engineered systems, custom cybersecurity protocols, and cloud-native integrations.
+          - generic [ref=f3e53]:
+            - article [ref=f3e55]:
+              - generic [ref=f3e56]:
+                - heading "ResumeTailor AI" [level=3] [ref=f3e57]
+                - paragraph [ref=f3e58]: Independent project · 2026
+                - paragraph [ref=f3e59]: ResumeTailor AI is an AI-powered resume customization platform that transforms a master resume into an ATS-optimized, recruiter-ready version tailored to any job description. The application combines semantic job analysis, intelligent keyword prioritization, AI-assisted content refinement, and secure PDF generation while enforcing strict factual accuracy through validation mechanisms that prevent unsupported information from being introduced. The result is a professional, ATS-safe resume that preserves the candidate's original experience while improving relevance for the target role.
+                - list [ref=f3e60]:
+                  - listitem [ref=f3e61]:
+                    - generic [ref=f3e63]: Semantic keyword analysis
+                  - listitem [ref=f3e64]:
+                    - generic [ref=f3e66]: AI-powered resume rewriting
+                  - listitem [ref=f3e67]:
+                    - generic [ref=f3e69]: ATS optimization
+                  - listitem [ref=f3e70]:
+                    - generic [ref=f3e72]: Interactive keyword selection
+                  - listitem [ref=f3e73]:
+                    - generic [ref=f3e75]: Professional PDF rendering
+                  - listitem [ref=f3e76]:
+                    - generic [ref=f3e78]: Resume scoring dashboard
+                  - listitem [ref=f3e79]:
+                    - generic [ref=f3e81]: Resume completeness validation
+                  - listitem [ref=f3e82]:
+                    - generic [ref=f3e84]: Hallucination prevention
+                  - listitem [ref=f3e85]:
+                    - generic [ref=f3e87]: Secure authentication
+                  - listitem [ref=f3e88]:
+                    - generic [ref=f3e90]: Production deployment
+                - generic [ref=f3e91]:
+                  - generic [ref=f3e92]: Python
+                  - generic [ref=f3e93]: FastAPI
+                  - generic [ref=f3e94]: Google Gemini
+                  - generic [ref=f3e95]: Jinja2
+                  - generic [ref=f3e96]: WeasyPrint
+                  - generic [ref=f3e97]: HTML
+                  - generic [ref=f3e98]: CSS
+                  - generic [ref=f3e99]: JavaScript
+                  - generic [ref=f3e100]: Docker
+                  - generic [ref=f3e101]: Render
+                  - generic [ref=f3e102]: ATS Optimization
+                - generic [ref=f3e103]:
+                  - link "View case study" [ref=f3e104] [cursor=pointer]:
+                    - /url: /projects/resumetailor-ai
+                  - link "View repository" [ref=f3e107] [cursor=pointer]:
+                    - /url: https://github.com/Iamgokul7/ResumeTailor-AI
+              - img "Keyword Selection" [ref=f3e112]
+            - article [ref=f3e114]:
+              - generic [ref=f3e115]:
+                - heading "ERPilot AI" [level=3] [ref=f3e116]
+                - paragraph [ref=f3e117]: Post-graduation project · 2026
+                - paragraph [ref=f3e118]: ERPilot AI is a full-stack AI-powered Enterprise Resource Planning (ERP) platform developed as an independent post-graduation project. The system centralizes employee management, inventory tracking, supplier management, sales operations, reporting, and AI-assisted business insights within a secure multi-tenant SaaS architecture. Built using Python and Flask, the platform demonstrates enterprise software engineering principles including role-based access control, tenant-level data isolation, automated reporting, inventory monitoring, and conversational AI integration powered by Google's Gemini models.
+                - list [ref=f3e119]:
+                  - listitem [ref=f3e120]:
+                    - generic [ref=f3e122]: Designed and developed a complete multi-tenant ERP SaaS architecture from scratch.
+                  - listitem [ref=f3e123]:
+                    - generic [ref=f3e125]: Implemented employee, inventory, supplier, sales, reporting, and notification modules.
+                  - listitem [ref=f3e126]:
+                    - generic [ref=f3e128]: Integrated Gemini AI for conversational business analytics and operational assistance.
+                  - listitem [ref=f3e129]:
+                    - generic [ref=f3e131]: Built role-based access control supporting Admin, Manager, and Employee roles.
+                  - listitem [ref=f3e132]:
+                    - generic [ref=f3e134]: Developed export functionality for CSV, Excel, and PDF business reports.
+                  - listitem [ref=f3e135]:
+                    - generic [ref=f3e137]: Implemented automated inventory alerts, audit logging, and secure tenant-scoped data access.
+                - generic [ref=f3e138]:
+                  - generic [ref=f3e139]: Python
+                  - generic [ref=f3e140]: Flask
+                  - generic [ref=f3e141]: SQLite
+                  - generic [ref=f3e142]: Gemini AI
+                  - generic [ref=f3e143]: Multi-Tenant SaaS
+                  - generic [ref=f3e144]: RBAC
+                  - generic [ref=f3e145]: Reporting Engine
+                - generic [ref=f3e146]:
+                  - link "View case study" [ref=f3e147] [cursor=pointer]:
+                    - /url: /projects/erpilot
+                  - link "View repository" [ref=f3e150] [cursor=pointer]:
+                    - /url: https://github.com/Iamgokul7/ERPilot-AI
+              - img "ERPilot AI Core Dashboard" [ref=f3e155]
+          - generic [ref=f3e156]:
+            - heading "Also built" [level=3] [ref=f3e158]
+            - generic [ref=f3e159]:
+              - article [ref=f3e161]:
+                - paragraph [ref=f3e162]: Final year project · 2025
+                - heading "Graphical Password Authentication With Data Hiding" [level=3] [ref=f3e163]
+                - paragraph [ref=f3e164]: A multi-layer authentication and secure file sharing platform developed as a Final Year Engineering Project. The system combines traditional credential verification, DWT-based image authentication, graphical PIN validation, AES-encrypted file protection, and controlled file sharing workflows to strengthen user security and data privacy. The platform was designed to address common weaknesses in traditional password-based systems while providing a secure environment for encrypted file storage, sharing, and access management through a user-friendly web application.
+                - generic [ref=f3e165]:
+                  - generic [ref=f3e166]: Python
+                  - generic [ref=f3e167]: Flask
+                  - generic [ref=f3e168]: OpenCV
+                  - generic [ref=f3e169]: AES Encryption
+                  - generic [ref=f3e170]: DWT Steganography
+                  - generic [ref=f3e171]: SQLite
+                - generic [ref=f3e172]:
+                  - link "View case study" [ref=f3e173] [cursor=pointer]:
+                    - /url: /projects/graphical-password
+                  - link "Repository" [ref=f3e176] [cursor=pointer]:
+                    - /url: https://github.com/Iamgokul7/Graphical-Password-Authentication-With-Data-Hiding
+              - article [ref=f3e181]:
+                - paragraph [ref=f3e182]: Academic project · 2024
+                - heading "Real Estate Management System" [level=3] [ref=f3e183]
+                - paragraph [ref=f3e184]: A web-based property management platform developed to simplify property discovery, listing management, client inquiries, and administrative operations. The system enables users to browse available properties, register accounts, search listings using multiple filters, submit inquiries, and interact with property managers through a centralized digital platform. The project was designed to replace manual property management workflows with an accessible online solution that improves operational efficiency, enhances customer experience, and provides a structured database-driven environment for managing real estate information.
+                - generic [ref=f3e185]:
+                  - generic [ref=f3e186]: HTML
+                  - generic [ref=f3e187]: CSS
+                  - generic [ref=f3e188]: JavaScript
+                  - generic [ref=f3e189]: PHP
+                  - generic [ref=f3e190]: MySQL
+                  - generic [ref=f3e191]: XAMPP
+                - generic [ref=f3e192]:
+                  - link "View case study" [ref=f3e193] [cursor=pointer]:
+                    - /url: /projects/real-estate
+                  - link "Repository" [ref=f3e196] [cursor=pointer]:
+                    - /url: https://github.com/Iamgokul7/Real-Estate-Management-System
+        - generic [ref=f3e200]:
+          - generic [ref=f3e201]:
+            - heading "Skills" [level=2] [ref=f3e202]
+            - paragraph [ref=f3e203]: The languages, frameworks, and platforms I use to build and ship software.
+          - generic [ref=f3e204]:
+            - generic [ref=f3e205]:
+              - heading "Languages & Frameworks" [level=3] [ref=f3e207]
+              - list [ref=f3e208]:
+                - listitem [ref=f3e209]: Python
+                - listitem [ref=f3e210]: Flask
+                - listitem [ref=f3e211]: JavaScript
+                - listitem [ref=f3e212]: HTML
+                - listitem [ref=f3e213]: CSS
+                - listitem [ref=f3e214]: PHP
+            - generic [ref=f3e215]:
+              - heading "Data & Security" [level=3] [ref=f3e217]
+              - list [ref=f3e218]:
+                - listitem [ref=f3e219]: MySQL
+                - listitem [ref=f3e220]: SQLite
+                - listitem [ref=f3e221]: OpenCV
+            - generic [ref=f3e222]:
+              - heading "Tools & Platforms" [level=3] [ref=f3e224]
+              - list [ref=f3e225]:
+                - listitem [ref=f3e226]: Git
+                - listitem [ref=f3e227]: Figma
+                - listitem [ref=f3e228]: OCI Foundations
+                - listitem [ref=f3e229]: SAP/ERP Fundamentals
+        - generic [ref=f3e231]:
+          - heading "Let's build together." [level=2] [ref=f3e233]: Let's buildtogether.
+          - paragraph [ref=f3e235]: Interested in high-security authentication systems, AI ERP integrations, or custom backend services? Get in touch.
+          - link "Get in touch" [ref=f3e237] [cursor=pointer]:
+            - /url: mailto:gokul.p0807@gmail.com
+    - contentinfo [ref=f3e241]:
+      - generic [ref=f3e242]:
+        - generic [ref=f3e243]:
+          - generic [ref=f3e244]:
+            - heading "Gokul P" [level=2] [ref=f3e245]
+            - paragraph [ref=f3e246]: Software Engineer
+          - generic [ref=f3e247]:
+            - link "GitHub" [ref=f3e248] [cursor=pointer]:
+              - /url: https://github.com/Iamgokul7
+            - link "LinkedIn" [ref=f3e249] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/gokulp0807/
+            - link "Email" [ref=f3e250] [cursor=pointer]:
+              - /url: mailto:gokul.p0807@gmail.com
+            - button "Resume" [ref=f3e251] [cursor=pointer]
+        - paragraph [ref=f3e256]: © 2026 Gokul P
+  - button "Open Next.js Dev Tools" [ref=f3e262] [cursor=pointer]

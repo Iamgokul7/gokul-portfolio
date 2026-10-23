@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { FadeIn } from "@/components/animations/fade-in"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
+import { TiltCard } from "@/components/ui/tilt-card"
 
 const homeProjects = [
   {
@@ -33,16 +34,16 @@ const homeProjects = [
 export function FeaturedProjects() {
   return (
     <section id="projects" className="mx-auto w-full max-w-screen-2xl scroll-mt-24 px-6 py-24 md:px-12">
-      <FadeIn direction="up">
+      <ScrollReveal direction="up">
         <h2 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Selected work</h2>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
           Detailed case studies of engineered systems, custom cybersecurity protocols, and cloud-native integrations.
         </p>
-      </FadeIn>
+      </ScrollReveal>
 
-      <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2">
-        {homeProjects.map((project, idx) => (
-          <FadeIn key={project.name} direction="up" delay={idx * 0.06} className="flex">
+      <ScrollReveal direction="up" stagger={0.12} className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {homeProjects.map((project) => (
+          <TiltCard key={project.name} className="flex">
             <article className="group flex w-full flex-col rounded-3xl bg-card p-8">
               <h3 className="text-2xl font-semibold tracking-tight text-foreground">{project.name}</h3>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground">{project.description}</p>
@@ -64,9 +65,9 @@ export function FeaturedProjects() {
                 </Link>
               </div>
             </article>
-          </FadeIn>
+          </TiltCard>
         ))}
-      </div>
+      </ScrollReveal>
     </section>
   )
 }
