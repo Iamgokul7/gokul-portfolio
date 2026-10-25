@@ -1,21 +1,13 @@
-"use client"
-
-import { motion } from "framer-motion"
-
 export function GradientBackground() {
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
-      {/* Top-left blob */}
-      <motion.div
-        className="absolute -left-32 -top-32 h-[600px] w-[600px] rounded-full bg-accent/5 blur-[120px]"
-        animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-      />
-      {/* Bottom-right blob */}
-      <motion.div
-        className="absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-accent/4 blur-[100px]"
-        animate={{ x: [0, -20, 0], y: [0, 25, 0] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 5 }}
+      {/* Static soft glows: no animation, so nothing repaints while scrolling */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(600px circle at 0% 0%, rgba(255,138,91,0.05), transparent 70%), radial-gradient(500px circle at 100% 100%, rgba(255,138,91,0.04), transparent 70%)",
+        }}
       />
     </div>
   )

@@ -34,7 +34,8 @@ export function DotGrid({ className = "" }: { className?: string }) {
     const WAVE2_SPEED = 0.011
 
     let dots: Dot[] = []
-    let rafId: number
+    let rafId = 0
+    let visible = false
     let W = 0
     let H = 0
 
@@ -101,8 +102,15 @@ export function DotGrid({ className = "" }: { className?: string }) {
         ctx.fill()
       })
 
-      rafId = requestAnimationFrame(draw)
+      rafId = visible ? requestAnimationFrame(draw) : 0
     }
+
+    const io = new IntersectionObserver(([entry]) => {
+      const was = visible
+      visible = entry.isIntersecting
+      if (visible && !was && !rafId) rafId = requestAnimationFrame(draw)
+    })
+    io.observe(canvas)
 
     const onMouse = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect()
@@ -115,10 +123,10 @@ export function DotGrid({ className = "" }: { className?: string }) {
     canvas.addEventListener("mousemove", onMouse)
     canvas.addEventListener("mouseleave", onLeave)
     build()
-    draw()
 
     return () => {
       cancelAnimationFrame(rafId)
+      io.disconnect()
       ro.disconnect()
       canvas.removeEventListener("mousemove", onMouse)
       canvas.removeEventListener("mouseleave", onLeave)

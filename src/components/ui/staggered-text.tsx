@@ -31,7 +31,7 @@ interface StaggeredTextProps {
 
 function getInitial(direction: Direction, blur: boolean): MotionStyle {
   const base: MotionStyle = { opacity: 0 }
-  if (blur) base.filter = "blur(8px)"
+  if (blur) base.filter = "blur(4px)"
   switch (direction) {
     case "top":    return { ...base, y: -24 }
     case "bottom": return { ...base, y: 24 }
@@ -95,8 +95,10 @@ export function StaggeredText({
   const delaySeconds = delay / 1000
   const staggerDelays = getStaggerDelays(segments.length, delaySeconds, staggerDirection)
 
-  const initial = from ?? getInitial(direction, blur)
-  const animate = to ?? getActive(blur)
+  // Per-character blur filters are very expensive (dozens of filtered layers), so only blur word/line segments.
+  const useBlur = blur && segmentBy !== "chars"
+  const initial = from ?? getInitial(direction, useBlur)
+  const animate = to ?? getActive(useBlur)
 
   const isChar = segmentBy === "chars"
   const isWord = segmentBy === "words"
@@ -134,6 +136,7 @@ export function StaggeredText({
               display: isChar ? "inline" : "inline-block",
               whiteSpace: isSpace ? "pre" : undefined,
               transformOrigin: "center bottom",
+              willChange: "transform, opacity",
             }}
           >
             {isSpace ? " " : segment}

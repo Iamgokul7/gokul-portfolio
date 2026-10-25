@@ -18,37 +18,30 @@ export function CustomCursor() {
       mouseY = e.clientY
     }
 
-    const onEnterLink = () => {
-      dot.style.transform = `translate(-50%, -50%) scale(2.2)`
-      dot.style.opacity = "0.6"
-    }
-    const onLeaveLink = () => {
-      dot.style.transform = `translate(-50%, -50%) scale(1)`
-      dot.style.opacity = "1"
+    let scale = 1
+    const sel = "a, button, [role='button'], input, textarea, select"
+    const onOver = (e: MouseEvent) => {
+      const hit = (e.target as Element | null)?.closest?.(sel)
+      const next = hit ? 2.2 : 1
+      if (next !== scale) {
+        scale = next
+        dot.style.opacity = hit ? "0.6" : "1"
+      }
     }
 
     const animate = () => {
-      dot.style.left = `${mouseX}px`
-      dot.style.top = `${mouseY}px`
+      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%) scale(${scale})`
       rafId = requestAnimationFrame(animate)
     }
 
-    const addListeners = () => {
-      document.querySelectorAll("a, button, [role='button'], input, textarea, select").forEach((el) => {
-        el.addEventListener("mouseenter", onEnterLink)
-        el.addEventListener("mouseleave", onLeaveLink)
-      })
-    }
-
-    window.addEventListener("mousemove", move)
+    window.addEventListener("mousemove", move, { passive: true })
+    document.addEventListener("mouseover", onOver, { passive: true })
     rafId = requestAnimationFrame(animate)
-    addListeners()
-    const interval = setInterval(addListeners, 2000)
 
     return () => {
       window.removeEventListener("mousemove", move)
       cancelAnimationFrame(rafId)
-      clearInterval(interval)
+      document.removeEventListener("mouseover", onOver)
     }
   }, [])
 
@@ -56,8 +49,8 @@ export function CustomCursor() {
     <div
       ref={dotRef}
       aria-hidden="true"
-      className="pointer-events-none fixed z-[9999] h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent transition-[transform,opacity] duration-150"
-      style={{ left: -100, top: -100, boxShadow: "0 0 8px rgba(255,138,91,0.8)" }}
+      className="pointer-events-none fixed left-0 top-0 z-[9999] h-2.5 w-2.5 rounded-full bg-accent will-change-transform"
+      style={{ boxShadow: "0 0 8px rgba(255,138,91,0.8)" }}
     />
   )
 }
