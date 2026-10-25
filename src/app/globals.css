@@ -93,6 +93,10 @@
     @apply bg-background text-foreground antialiased selection:bg-accent selection:text-accent-foreground;
     font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+    /* Subtle ambient depth — very faint fixed gradient so content has something to sit on top of */
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,138,91,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 100%, rgba(167,139,250,0.05) 0%, transparent 55%);
   }
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-accent;
@@ -117,6 +121,48 @@
   text-wrap: balance;
 }
 
+
+/* ── Depth utilities ─────────────────────────────────────────────── */
+
+/* Heading glow — orange warmth + purple halo */
+.text-glow {
+  text-shadow:
+    0 0 30px rgba(255, 138, 91, 0.45),
+    0 0 70px rgba(255, 138, 91, 0.18),
+    0 0 120px rgba(167, 139, 250, 0.12);
+}
+
+/* Subtle glow for body text / muted headings */
+.text-glow-sm {
+  text-shadow: 0 0 20px rgba(255, 138, 91, 0.3);
+}
+
+/* Elevated card — lifts off the background with shadow + inner top highlight */
+.card-depth {
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.06) inset,
+    0 -1px 0 0 rgba(0,0,0,0.3) inset,
+    0 4px 8px rgba(0,0,0,0.3),
+    0 12px 32px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(255,255,255,0.06);
+  backdrop-filter: blur(4px);
+}
+
+/* Carousel/stage container */
+.stage-depth {
+  box-shadow:
+    0 2px 0 0 rgba(255,255,255,0.04) inset,
+    0 8px 32px rgba(0,0,0,0.5),
+    0 24px 64px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,255,255,0.07),
+    0 0 60px rgba(167,139,250,0.07);
+}
+
+/* Section wrapper with a faint border top to separate from the section above */
+.section-divide {
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
 /* Reusable button styles: flat accent fill, no shadows or glows */
 .btn-primary-styled {
   @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent text-accent-foreground px-6 py-3 text-sm font-semibold transition-colors duration-200 hover:bg-accent-hover active:scale-[0.98] cursor-pointer;
@@ -137,5 +183,12 @@
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+/* Shiny text animation */
+@keyframes shiny-text {
+  to {
+    background-position: 200% center;
   }
 }

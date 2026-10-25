@@ -2,17 +2,21 @@
 
 import { siteConfig } from "@/data/site-config"
 import { ResumeButton } from "./resume-button"
+import { ShinyText } from "@/components/ui/shiny-text"
+import { DotGrid } from "@/components/effects/dot-grid"
 
 export function Footer() {
   return (
-    <footer className="w-full bg-card">
-      <div className="mx-auto max-w-screen-2xl px-6 py-16 md:px-12 md:py-20">
+    <footer className="relative w-full overflow-hidden border-t border-border/40 bg-card">
+      <DotGrid />
+
+      <div className="relative z-10 mx-auto max-w-screen-2xl px-6 py-10 md:px-12 md:py-14">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Gokul P
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              <ShinyText text="Gokul P" speed={4} />
             </h2>
-            <p className="mt-2 text-sm text-muted-foreground">Software Engineer</p>
+            <p className="mt-2 text-sm text-muted-foreground">Full Stack & AI Engineer</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-sm">
@@ -45,7 +49,12 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="mt-16 text-xs text-muted-label">&copy; {new Date().getFullYear()} Gokul P</p>
+        <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-border/30 pt-6 sm:flex-row sm:items-center">
+          <p className="text-xs text-muted-foreground/50">
+            &copy; {new Date().getFullYear()} Gokul P. Built with Next.js & Framer Motion.
+          </p>
+          <p className="text-xs text-muted-foreground/50">Chennai, India</p>
+        </div>
       </div>
     </footer>
   )

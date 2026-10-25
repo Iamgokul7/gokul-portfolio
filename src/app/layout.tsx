@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { LenisProvider } from "@/lib/lenis"
+import { CursorSpotlight } from "@/components/effects/cursor-spotlight"
+import { ScrollProgress } from "@/components/effects/scroll-progress"
+import { CustomCursor } from "@/components/effects/custom-cursor"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -25,8 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground cursor-none`}
+      >
         <LenisProvider>
+          <CustomCursor />
+          <ScrollProgress />
+          <CursorSpotlight />
           {children}
         </LenisProvider>
       </body>

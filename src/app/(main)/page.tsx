@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/home/hero-section"
 import { AboutSnapshot } from "@/components/home/about-snapshot"
+import { StatsSection } from "@/components/home/stats-section"
 import { FeaturedProjects } from "@/components/home/featured-projects"
 import { SkillsSection } from "@/components/home/skills-section"
 import { CTASection } from "@/components/home/cta-section"
@@ -10,6 +11,7 @@ export default function HomePage() {
     <PageTransition>
       <div className="flex w-full flex-col">
         <HeroSection />
+        <StatsSection />
         <AboutSnapshot />
         <FeaturedProjects />
         <SkillsSection />

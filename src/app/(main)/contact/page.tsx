@@ -1,4 +1,5 @@
 "use client"
+import { StaggeredText } from "@/components/ui/staggered-text"
 
 import { useState } from "react"
 import { siteConfig } from "@/data/site-config"
@@ -22,9 +23,7 @@ export default function ContactPage() {
         {/* Header */}
         <FadeIn direction="up" className="max-w-3xl pb-16">
           <span className="text-sm font-medium text-muted-label">Communications</span>
-          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-foreground sm:text-7xl">
-            Get In Touch
-          </h1>
+          <StaggeredText text="Get In Touch" as="h1" className="mt-4 text-5xl font-semibold tracking-tight text-foreground sm:text-7xl" segmentBy="chars" delay={45} duration={0.55} direction="bottom" blur={true} />
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             If you are a recruiter, hiring manager, or software engineer looking to discuss technical opportunities, cloud architectures, or backend systems, reach out.
           </p>

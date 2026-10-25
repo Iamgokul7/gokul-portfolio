@@ -1,4 +1,5 @@
 "use client"
+import { StaggeredText } from "@/components/ui/staggered-text"
 
 import { certifications } from "@/data/certifications"
 import { FadeIn } from "@/components/animations/fade-in"
@@ -12,9 +13,7 @@ export default function CertificationsPage() {
         {/* Header */}
         <FadeIn direction="up" className="max-w-3xl pb-16">
           <span className="text-sm font-medium text-muted-label">Verification</span>
-          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-foreground sm:text-7xl">
-            Technical Credentials
-          </h1>
+          <StaggeredText text="Technical Credentials" as="h1" className="mt-4 text-5xl font-semibold tracking-tight text-foreground sm:text-7xl" segmentBy="chars" delay={45} duration={0.55} direction="bottom" blur={true} />
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             Academic certifications and technical credentials validating skills in cloud architectures, networking configurations, software design, and user interfaces.
           </p>
